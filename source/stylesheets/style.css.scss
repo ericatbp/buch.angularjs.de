@@ -1,0 +1,147 @@
+@import 'variables';
+@import 'bootstrap';
+@import 'coderay';
+
+body {
+  position: relative; /* For scrollyspy */
+}
+
+img { max-width: 100%; }
+
+code { white-space: pre-wrap; }
+
+.container {
+  overflow: hidden;
+}
+
+
+.navbar {
+  margin: 0;
+  border: transparent;
+}
+
+.navbar-default {
+  min-height: 30px;
+  li a { padding: 5px 10px; }
+}
+
+.navbar-brand-logo {
+  position: absolute;
+  bottom: 0;
+}
+
+.navbar-inverse {
+  .navbar-brand {
+    font-weight: 300;
+    color: #fff;
+    text-transform: uppercase;
+    em { color: #999; font-style: normal; }
+  }
+  li { text-transform: uppercase; }
+}
+
+.navbar-default .navbar-nav > li > a.twitter:hover { color: #57e7f1; }
+.navbar-default .navbar-nav > li > a.facebook:hover { color: #558CFB; }
+.navbar-default .navbar-nav > li > a.account { color: #bb0000; }
+
+
+#markdown-toc {
+  padding-left: 0;
+  > li { list-style-type: none; }
+  > li > a { color: $gray; text-transform: uppercase; }
+}
+
+
+/*
+ * Side navigation
+ *
+ * Scrollspy and affixed enhanced navigation to highlight sections and secondary
+ * sections of docs content.
+ *
+ * From bootstrap docs
+ */
+
+/* First level of nav */
+.bs-sidenav {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding-top:    10px;
+  padding-bottom: 10px;
+  text-shadow: 0 1px 0 #fff;
+  border-radius: 5px;
+}
+
+/* By default it's not affixed in mobile views, so undo that */
+.bs-sidebar {
+  &.affix { position: static; }
+
+  // All levels
+  .nav {
+    li > a {
+      font-weight: 300;
+      display: block;
+      color: $gray;
+      padding: 5px 20px;
+      :hover, :focus {
+        text-decoration: none;
+        background-color: $gray-light;
+      }
+    }
+    li.active > a,
+    li.active:hover > a,
+    li.active:focus > a {
+      font-weight: 400;
+      color: $brand-primary;
+      background-color: transparent;
+    }
+  }
+
+  > .nav {
+    /* first level */
+    > li > a {
+      text-transform: uppercase;
+    }
+    /* second level */
+    .nav {
+      display: none; /* Hide by default, but at >768px, show it */
+      margin-bottom: 8px;
+      > li > a {
+        padding-top:    3px;
+        padding-bottom: 3px;
+        padding-left: 30px;
+        font-size: 90%;
+      }
+    }
+  }
+}
+
+/* Show and affix the side nav when space allows it */
+@media screen and (min-width: 992px) {
+  .bs-sidebar {
+    .nav > .active > ul {
+      display: block;
+    }
+    &.affix, &.affix-bottom {
+      width: 213px;
+      .bs-sidenav { margin-top: 0; margin-bottom: 0; }
+    }
+    &.affix {
+      position: fixed; /* Undo the static from mobile first approach */
+      top: 80px;
+    }
+    &.affix-bottom {
+      position: absolute; /* Undo the static from mobile first approach */
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  /* Widen the fixed sidebar again */
+  .bs-sidebar.affix-bottom,
+  .bs-sidebar.affix {
+    width: 263px;
+  }
+}
+
+
+

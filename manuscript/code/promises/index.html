@@ -1,0 +1,24 @@
+<html ng-app>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js"></script>
+    <script src="application.js"></script>
+  </head>
+  <body ng-controller="MainController">
+    <fieldset>
+      <legend>Promise 1</legend>
+      <button ng-click="resolve1()">Resolve</button>
+      <button ng-click="reject1()">Reject</button>
+      {{result1}}
+    </fieldset>
+    <fieldset>
+      <legend>Promise 2</legend>
+      <button ng-click="resolve2()">Resolve</button>
+      <button ng-click="reject2()">Reject</button>
+      {{result2}}
+    </fieldset>
+    <fieldset>
+      <legend>Promise All</legend>
+      {{resultAll}}
+    </fieldset>
+  </body>
+</html>

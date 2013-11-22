@@ -1,0 +1,17 @@
+---
+title: AngularJS Online-Buch / Tutorial
+---
+<h1 class="page-header">AngularJS Online-Buch</h1>
+
+<%= partial 'layouts/newsletter' %>
+
+<hr>
+
+<p>Letzte Aktualisierung am <%= Time.now.strftime('%d.%m.%Y') %> von <%= link_to 'Sascha Brink', 'http://angularjs.de/entwickler/saschabrink', rel: 'author' %></p>
+
+<p class="alert alert-info well-sm">Du möchtest Dich am Buch beteiligen oder hast einen Fehler gefunden? Besuch das <a href="https://github.com/sbrink/buch.angularjs.de" target="_blank">GitHub-Respository</a> und stelle einen Pull-Request.</p>
+
+<%  output = "* toc\n{:toc}\n\n"
+    output += Dir[File.join('manuscript', '**/*.md')].sort.map { |input| "\n\n" + File.read(input) + "\n\n" }.join %>
+
+<%= Kramdown::Document.new(output, input: 'KramdownBook', toc_levels: "1,2", coderay_css: :class, coderay_line_numbers: nil, coderay_bold_every: 100).to_middleman %>

@@ -1,0 +1,27 @@
+<html ng-app="Shop">
+<head>
+  <meta charset="utf8" />
+  <title>Ecommerce</title>
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+  <script src="application.js"></script>
+</head>
+<body>
+  <div class="container">
+
+    <nav class="navbar navbar-default" role="navigation">
+      <a class="navbar-brand" href="#">Shop</a>
+      <ul class="nav navbar-nav">
+        <li><a ng-href="#/">Startseite</a></li>
+        <li><a ng-href="#/about">Über</a></li>
+      </ul>
+    </nav>
+
+    <div class="row">
+      <div class="col-sm-8" ng-view>Inhalt</div>
+      <div class="col-sm-4" ng-include="'cart.html'">Warenkorb</div>
+    </div>
+
+  </div>
+</body>
+</html>
