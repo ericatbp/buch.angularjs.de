@@ -2,24 +2,1132 @@
 <html>
   <head>
     <meta charset="utf-8">
-    
-    <!-- Always force latest IE rendering engine or request Chrome Frame -->
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
-    
-    <!-- Use title if it's in the page YAML frontmatter -->
     <title>Welcome to Middleman</title>
-    
     <link href="/stylesheets/normalize.css" media="screen" rel="stylesheet" type="text/css" />
 <link href="/stylesheets/all.css" media="screen" rel="stylesheet" type="text/css" />
     <script src="/javascripts/all.js" type="text/javascript"></script>
   </head>
-  
+
   <body class="index">
-    <div class="welcome">
-  <h1>Middleman is Watching</h1>
-  <p class="doc">
-    <a href="http://middlemanapp.com/">Read Online Documentation</a>
-  </p><!-- .doc -->
-</div><!-- .welcome -->
+
+    <div class="container bs-docs-container">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="bs-sidebar hidden-print" role="complementary">
+            <ul class="nav bs-sidenav">
+              <li><a href="#einleitung">1. Einleitung</a>    <ul class="nav">
+    <li><a href="#erwartete-vorkenntnisse">Erwartete Vorkenntnisse</a></li>
+    <li><a href="#aufbau">Aufbau</a></li>
+    <li><a href="#lernstrategie">Lernstrategie</a></li>
+    <li><a href="#didaktischer-hintergrund">Didaktischer Hintergrund</a></li>
+  </ul>
+</li>
+<li><a href="#grundlagen">2. Grundlagen</a>    <ul class="nav">
+    <li><a href="#was-ist-angularjs">Was ist AngularJS</a></li>
+    <li><a href="#vorteile">Vorteile von AngularJS</a></li>
+    <li><a href="#databinding">Databinding - einfach/bidirektional</a></li>
+    <li><a href="#ueberblick">Überblick der wichtigsten Komponenten</a></li>
+  </ul>
+</li>
+<li><a href="#basisapplikation">3. Basisapplikation</a>    <ul class="nav">
+    <li><a href="#ein-erstes-programm-ng-app-ng-model-binding">Ein erstes Programm (ng-app, ng-model, Binding)</a></li>
+    <li><a href="#ngcontroller">ngController</a></li>
+    <li><a href="#ngrepeat">ngRepeat</a></li>
+    <li><a href="#ngclick-ngchange-ngmouse">ngClick, ngChange, ngMouse…</a></li>
+    <li><a href="#input">Input…</a></li>
+    <li><a href="#die-mglichkeiten-von-">Die Möglichkeiten von {{…}}</a></li>
+    <li><a href="#weitere-ng-direktiven">Weitere ng-Direktiven</a></li>
+    <li><a href="#form-validierung">Form-Validierung</a></li>
+    <li><a href="#animations">Animationen / Animations mit ng-animate</a></li>
+  </ul>
+</li>
+<li><a href="#erweiterungen-der-applikation">4. Erweiterungen der Applikation</a>    <ul class="nav">
+    <li><a href="#rest-kommunikation">REST-Kommunikation mit dem Server</a></li>
+    <li><a href="#eigene-direktiven">Eigene Direktiven erstellen</a></li>
+    <li><a href="#eigene-filter">Eigene Filter erstellen</a></li>
+    <li><a href="#suchmaschinenoptimierung">SEO / Suchmaschinenoptimierung</a></li>
+    <li><a href="#twitter-bootstrap">Erweiterungen für Twitter Bootstrap</a></li>
+    <li><a href="#module">Module: Die Applikation aufteilen</a></li>
+  </ul>
+</li>
+<li><a href="#testen">5. Testen</a>    <ul class="nav">
+    <li><a href="#testen-von-controllern">Testen von Controllern</a></li>
+    <li><a href="#testen-von-direktiven">Testen von Direktiven</a></li>
+  </ul>
+</li>
+<li><a href="#vertiefung">6. Konzepte und Hintergründe</a>    <ul class="nav">
+    <li><a href="#dependency-injection">Dependency Injection und der Injektor von AngularJS</a></li>
+    <li><a href="#services">Factory, Service und Provider</a></li>
+    <li><a href="#decorator">Decorator</a></li>
+    <li><a href="#unobtrusive-javascript">Unobtrusive JavaScript</a></li>
+    <li><a href="#minification">Verwendung von Minifiern</a></li>
+    <li><a href="#jqlite">jqLite - Kompatibilität mit jQuery</a></li>
+    <li><a href="#browser-kompatibilitaet">Internet Explorer - Kompatibilität (IE6, IE7, IE8)</a></li>
+    <li><a href="#promises">Promises [TODO]</a></li>
+    <li><a href="#internationalisierung">Internationalisierung (I18n und L10n) [TODO]</a></li>
+    <li><a href="#performance">Performance [TODO]</a></li>
+    <li><a href="#runtime">Updatezyklus im Browser [TODO]</a></li>
+  </ul>
+</li>
+<li><a href="#anhang">Anhang</a>    <ul class="nav">
+    <li><a href="#framework-trend">Trend-Vergleich mit anderen Frameworks</a></li>
+    <li><a href="#entstehungsgeschichte">Entstehungsgeschichte</a></li>
+  </ul>
+</li>
+
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-9" role="main">
+          
+
+<ul id="markdown-toc">
+  <li><a href="#einleitung">1. Einleitung</a>    <ul>
+      <li><a href="#erwartete-vorkenntnisse">Erwartete Vorkenntnisse</a></li>
+      <li><a href="#aufbau">Aufbau</a></li>
+      <li><a href="#lernstrategie">Lernstrategie</a></li>
+      <li><a href="#didaktischer-hintergrund">Didaktischer Hintergrund</a></li>
+    </ul>
+  </li>
+  <li><a href="#grundlagen">2. Grundlagen</a>    <ul>
+      <li><a href="#was-ist-angularjs">Was ist AngularJS</a></li>
+      <li><a href="#vorteile">Vorteile von AngularJS</a></li>
+      <li><a href="#databinding">Databinding - einfach/bidirektional</a></li>
+      <li><a href="#ueberblick">Überblick der wichtigsten Komponenten</a></li>
+    </ul>
+  </li>
+  <li><a href="#basisapplikation">3. Basisapplikation</a>    <ul>
+      <li><a href="#ein-erstes-programm-ng-app-ng-model-binding">Ein erstes Programm (ng-app, ng-model, Binding)</a></li>
+      <li><a href="#ngcontroller">ngController</a></li>
+      <li><a href="#ngrepeat">ngRepeat</a></li>
+      <li><a href="#ngclick-ngchange-ngmouse">ngClick, ngChange, ngMouse…</a></li>
+      <li><a href="#input">Input…</a></li>
+      <li><a href="#die-mglichkeiten-von-">Die Möglichkeiten von {{…}}</a></li>
+      <li><a href="#weitere-ng-direktiven">Weitere ng-Direktiven</a></li>
+      <li><a href="#form-validierung">Form-Validierung</a></li>
+      <li><a href="#animations">Animationen / Animations mit ng-animate</a></li>
+    </ul>
+  </li>
+  <li><a href="#erweiterungen-der-applikation">4. Erweiterungen der Applikation</a>    <ul>
+      <li><a href="#rest-kommunikation">REST-Kommunikation mit dem Server</a></li>
+      <li><a href="#eigene-direktiven">Eigene Direktiven erstellen</a></li>
+      <li><a href="#eigene-filter">Eigene Filter erstellen</a></li>
+      <li><a href="#suchmaschinenoptimierung">SEO / Suchmaschinenoptimierung</a></li>
+      <li><a href="#twitter-bootstrap">Erweiterungen für Twitter Bootstrap</a></li>
+      <li><a href="#module">Module: Die Applikation aufteilen</a></li>
+    </ul>
+  </li>
+  <li><a href="#testen">5. Testen</a>    <ul>
+      <li><a href="#testen-von-controllern">Testen von Controllern</a></li>
+      <li><a href="#testen-von-direktiven">Testen von Direktiven</a></li>
+    </ul>
+  </li>
+  <li><a href="#vertiefung">6. Konzepte und Hintergründe</a>    <ul>
+      <li><a href="#dependency-injection">Dependency Injection und der Injektor von AngularJS</a></li>
+      <li><a href="#services">Factory, Service und Provider</a></li>
+      <li><a href="#decorator">Decorator</a></li>
+      <li><a href="#unobtrusive-javascript">Unobtrusive JavaScript</a></li>
+      <li><a href="#minification">Verwendung von Minifiern</a></li>
+      <li><a href="#jqlite">jqLite - Kompatibilität mit jQuery</a></li>
+      <li><a href="#browser-kompatibilitaet">Internet Explorer - Kompatibilität (IE6, IE7, IE8)</a></li>
+      <li><a href="#promises">Promises [TODO]</a></li>
+      <li><a href="#internationalisierung">Internationalisierung (I18n und L10n) [TODO]</a></li>
+      <li><a href="#performance">Performance [TODO]</a></li>
+      <li><a href="#runtime">Updatezyklus im Browser [TODO]</a></li>
+    </ul>
+  </li>
+  <li><a href="#anhang">Anhang</a>    <ul>
+      <li><a href="#framework-trend">Trend-Vergleich mit anderen Frameworks</a></li>
+      <li><a href="#entstehungsgeschichte">Entstehungsgeschichte</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="einleitung">1. Einleitung</h1>
+
+<blockquote>
+  <p><em>INFORMATION</em> Die meisten Fachbegriffe sind bewusst in ihrem englischen Original belassen. Unserer Erfahrung nach verwirren deutsche Übersetzungen von Fachbegriffen mehr, als dass sie helfen.</p>
+</blockquote>
+
+<h2 id="erwartete-vorkenntnisse">Erwartete Vorkenntnisse</h2>
+
+<p>Da AngularJS im Browser (Frontend) angesiedelt ist, setzen wir Kenntnisse von <em>JavaScript</em> und <em>HTML</em> zwingend voraus. Eine Webapplikation ohne Datenlieferanten macht wenig Sinn. Deshalb ist es von Vorteil, wenn du dich mit einem beliebigen Web-Framework auskennst, welches eine JSON-Schnittstelle erzeugen kann. In diesem Buch setzen wir exemplarisch <a href="http://www.sinatrarb.com">Sinatra</a> ein. Sinatras Syntax ist einfach zu verstehen und lässt sich sehr gut auf andere Frameworks übertragen.</p>
+
+<p>Die Wahl des Texteditors / der IDE steht dir frei. Falls du noch keine keine Wahl getroffen hast, empfehlen wir Fans von schwergewichtigen IDEs <a href="http://www.jetbrains.com/webstorm/">Webstorm</a> und Fans von leichtgewichtigen Editoren <a href="http://www.sublimetext.com/">Sublime Text</a>. Beide sind für Windows, Linux und MacOS erhältlich und können kostenlos getestet werden.</p>
+
+<h2 id="aufbau">Aufbau</h2>
+
+<p>Das Buch ist folgendermaßen gegliedert:</p>
+
+<p><img src="figures/structure.png" alt="AngularJS Aufbau" /></p>
+
+<ol>
+  <li>Grundlagen: Du bekommst einen Überblick, was AngularJS umfasst. Konzepte von AngularJS werden von uns kurz umrissen. Am Ende des Kapitels findest du die wichtigsten Komponenten grafisch dargestellt.</li>
+  <li>Basisapplikation: In diesem Teil erstellen wir eine Beispielapplikation. Mit dieser behandeln wir die grundlegenden Funktionen von AngularJS.</li>
+  <li>Erweiterungen: Im dritten Teil bieten wir Erweiterungen für die Beispielapplikation und Angular allgemein an. Die Erweiterungen sind unabhängig voneinander. Probiere aus, was dich interessiert.</li>
+  <li>Vertiefung: Im letzten Kapitel greifen wir oberflächlich behandelte Themen wieder auf, vertiefen diese und gehen auf Themen wie Suchmaschinenoptimierung, I18n, Kompatibilität und Best Practices ein.</li>
+</ol>
+
+<h2 id="lernstrategie">Lernstrategie</h2>
+
+<p>Dieses Buch folgt einer durchdachten Struktur mit der es dir in kurzer Zeit möglich ist, AngularJS zu verstehen und zu verwenden. Theorie und Praxis werden sich abwechseln. Halte dich an die folgende Vorgehensweise, um möglich schnell voranzukommen:</p>
+
+<ul>
+  <li>Lies Kaptiel 1 und bekomme ein erstes Gefühl für den Umfang und die Möglickeiten von AngularJS. Drucke dir die grafische Übersicht aus! Hake aus dieser Übersicht ab, was du zu 80% verstanden hast.</li>
+  <li>Arbeite Kapitel 2 durch, erstelle die Beispielapplikation und eigne dir damit die notwendigen Grundlagen an.</li>
+  <li>Greife dir verschiedene Erweiterungsmöglichkeiten aus Kapitel 3 heraus und erweitere die Applikation.</li>
+  <li>BEGINNE MIT DEINEM EIGENEN PROJEKT.</li>
+  <li>Wenn du auf Probleme und Unklarheiten stößt, schlag in Kapitel 4 nach und verstehe das Konzept dahinter. Natürlich ist es dir an jeder beliebigen Stelle erlaubt, dein Wissen durch Kapitel 4 zu vertiefen.</li>
+  <li><a href="#grundlagen">JETZT STARTEN</a></li>
+</ul>
+
+<h2 id="didaktischer-hintergrund">Didaktischer Hintergrund</h2>
+
+<p>Wir möchten mit diesem Buch nicht nur trocken das nötige Wissen für AngularJS vermitteln, sondern auch die Motivation beim Erlernen hoch zu halten. Wir nehmen an, dass uns Folgendes motiviert beim Lernen:</p>
+
+<ul>
+  <li>Wir fühlen uns schlecht, wenn sich ein unüberschaubarer Berg an Arbeit vor uns auftürmt.</li>
+  <li>Wir fühlen uns gut, wenn wir schnell Ergebnisse sehen.</li>
+  <li>Wir lernen schneller, wenn wir einen Schritt nach dem Anderen machen. Bei zur viel Informationen auf einmal, verzetteln wir uns.</li>
+  <li>Sowohl Überforderung, als auch Unterforderung demotivieren uns.</li>
+  <li>Sinnlos erscheinende Dinge nehmen wir hin - wie übernehmen sie aber nicht.</li>
+  <li>Vieles macht für uns erst durch den Hintergrund Sinn.</li>
+  <li>Wenn wir ein Konzept verstanden, macht es uns kreativer.</li>
+</ul>
+
+<p>Durch unsere Annahmen sind folgende Strukturen entstanden:</p>
+
+<ul>
+  <li>Um den Überblick zu behalten, gibt es den ersten Teil und die grafische Übersicht der Komponenten. Durch diese hast du deinen aktuellen Fortschritt im Blick. Das Abhaken der einzelnen Komponenten verhält sich wie eine Todo-Liste und gibt dir das Gefühl, etwas geschafft zu haben.</li>
+  <li>Mit einem Buch über AngularJS geht es erstmal darum, AngularJS zu lernen. Deshalb ist die Theorie besonders am Anfang sehr kurz gehalten. Um die ersten Schritte zu gehen, ist nicht viel Hintergrundwissen notwendig. Je besser man wird, desto mehr fallen einem fehlende Konzepte auf und man wird selbstständig danach suchen.</li>
+  <li>Testen ist bewusst in seinem eigenen Kapitel. Auch wenn Testen eine große Stärke von AngularJS ist, ist nicht sinnvoll schon am Anfang darauf einzugehen. Es gibt eigene Bücher zum Testen und das hat seinen Grund - Testen ist ein eigenes Lernthema.</li>
+  <li>Manche Dinge, wie z.B. Dependency Injection kann man nur als Teil von AngularJS sehen, um mit anderen Komponenten irgendwie zu kommunizieren. Erst wenn man wirklich verstanden hat, wie es wirklich funktioniert, sieht man, wie man seine Komponenten kapseln sollte, damit es gut funktioniert.</li>
+  <li>Dieses Buch wird nicht die Antwort auf alle Fragen in Bezug auf AngularJS haben. Wenn du aber zum Schluss alle Konzepte verstanden hast, wirst du wissen, wo du suchen musst. Vielleicht erinnerst du dich an Mathematik in deiner Schulzeit. Es gab immer Schüler, die konnten die Standardaufgaben problemlos durchrechnen. Wurde die Aufgabenstellung aber leicht abgeändert wurde, versagten sie.
+In der Programmierung ist es ähnlich. Vergleichen wir die Schüler von gerade mit den Programmierern, die von Copy&amp;Paste leben. Ihnen ergeht es ähnlich. Verstehe den Kern der Sache und du kommst auch bei Spezialfällen weiter, die nicht der Norm entsprechen.</li>
+</ul>
+
+<h1 id="grundlagen">2. Grundlagen</h1>
+
+<blockquote>
+  <p>Bist du Neuling in der Welt der dynamischen Webprogrammierung? - dann ist dieser Teil besonders wichtig. Wenn du bisher nur mit klassischen Webframeworks, wie Rails, Django, Symphony, etc. in Berührung gekommen bist, solltest du dir die Zeit nehmen, um dich mit den Grundlagen vertraut zu machen. AngularJS inspiriert zum Umdenken. Um diesen Teil möglichst kurz zu halten, sind Hintergrundinformationen, wie z.B. die Entstehung von AngularJS in den letzten Teil gewandert.</p>
+</blockquote>
+
+<h2 id="was-ist-angularjs">Was ist AngularJS</h2>
+
+<p>AngularJS ist in wenigen Stichpunkten zusammengefasst:</p>
+
+<ul>
+  <li>Ein JavaScript-Framework für dynamische Webapplikationen</li>
+  <li>Für die Entwicklung von Single-Page-Apps gedacht</li>
+  <li>Entwickelt von Google und dort im Produktiveinsatz</li>
+  <li>Ein Open-Source-Projekt (seit 2009)</li>
+  <li>Eine MVC/MVVM-Framework, das bidirektionales Databinding unterstützt</li>
+  <li>Auf gute Testbarkeit ausgelegt</li>
+  <li>Opinionated</li>
+</ul>
+
+<h2 id="vorteile">Vorteile von AngularJS</h2>
+
+<h3 id="code-reduktion">Code-Reduktion</h3>
+<p>AngularJS macht einen Großteil des Codes, den man normalerweise schreibt, überflüssig. Wer bisher mit jQuery gearbeitet hat, staunt häufig, wie viel kleiner der Quelltext wird. Die Reduktion des Codes begründet sich durch die Automatisierung von Standardaufgaben.</p>
+
+<p>Viel Arbeit investiert man in die manuelle DOM-Selektion, DOM-Manipulation und Event-Behandlung. Um z.B. ein Element im DOM verändern, muss man es referenzieren können. Das macht man normalerweise über die Vergabe einer ID/Class und benutzt einen Selektor, wie <code>$('#mein-element').</code>. Hat man es selektiert, schreibt man explizit, was mit dem Element gemacht werden soll, z.B. <code>$('#mein-element').addClass('active')</code>. Es gibt auch die Möglichkeit auf ein Ereignis zu reagieren, wie z.B. das Bewegen der Maus. In diesem Fall würde man normalerweise einen Event-Listener mit einem Callback setzen.</p>
+
+<p>Diese Aktionen nehmen in einem typischen Projekt extrem viel Platz in Anspruch. AngularJS automatisiert diese Sachen fast vollständig durch Databinding und Direktiven.</p>
+
+<h3 id="testbarkeit-und-refaktorierung">Testbarkeit und Refaktorierung</h3>
+<p>AngularJS benutzt Dependency Injection durch und durch. Ohne an dieser Stelle in die Tiefe zu gehen, sorgt Dependency Injection für eine sehr gute Testbarkeit, weitere Code-Reduktion und einfache Refaktorierung. Wie DI im Detail funktioniert, wird im Vertiefungskapitel behandelt.</p>
+
+<h3 id="wiederverwendbare-komponenten-und-lesbarkeit">Wiederverwendbare Komponenten und Lesbarkeit</h3>
+<p>AngularJS kann das HTML-Vokabular über Direktiven erweitern. Man könnte z.B. <code>&lt;tabs&gt;&lt;pane title=""&gt;</code> statt <code>&lt;ul class="tabs"&gt;&lt;li class="tab-title"&gt;&lt;div class="tab-content"&gt;</code> schreiben. Die Verwendung von Direktiven bringt folgende Vorteile:</p>
+
+<ul>
+  <li>Die Lesbarkeit wird deutlich gesteigert durch semantische Benennung und Weglassen von Elementen, die nur der Gestaltung dienen</li>
+  <li>Automatisches Entstehen von Komponenten, die sich sehr gut testen und wiederverwenden lassen. (Testen im DOM ist einfach mit AngularJS)</li>
+</ul>
+
+<h3 id="verwendung-der-datentypen-von-javascript">Verwendung der Datentypen von JavaScript</h3>
+<p>Ein Grund, weshalb der Einstieg in AngularJS sehr schnell geht, ist die Möglichkeit, die normalen Datentypen von JavaScript zu verwenden. Dadurch ist es sehr einfach möglich, fremde Bibliotheken einzubinden, ohne eine weitere Zwischenschicht (Glue Code) zu implementieren. Andere JavaScript-Frameworks, wie z.B. Knockout oder Ember zwingen einem auf, ihre Klassen zu erben und Attribute durch Getter/Setter zu verändern. Die Methode, die AngularJS dazu verwendet nennt sich Dirty-Checking und wird im Vertiefungskapitel näher erklärt.</p>
+
+<!-- ### Deklarativ UI, Imperativ Logik -->
+
+<h2 id="databinding">Databinding - einfach/bidirektional</h2>
+<p>Im der traditionellen JavaScript-Programmierung werden Änderungen direkt im DOM von einem Event-Handler ausgeführt. Bei bidirektionalem ändert man nur das Model. Änderungen vom Model werden vom Framework in den DOM übertragen. Dies sorgt für eine klare Trennung und verständlicheren Code.</p>
+
+<p><img src="figures/binding-types.png" alt="AngularJS Binding im Vergleich" /></p>
+
+<h3 id="einfaches-databinding-one-way">Einfaches Databinding (One-Way)</h3>
+<p>Die meisten Entwickler aus der klassischen Webentwicklung werden mit dem einfachen Databinding bestens vertraut sein. Es gibt ein Model, welches die Daten bereitstellt und ein Template, welches das Aussehen liefert. Diese werden verschmolzen und als View an den Benutzer geschickt.</p>
+
+<p>Das Problem hierbei: Im Anschluss spiegeln sich weitere Änderungen am Model nicht mehr automatisch im View wider. Auch Änderungen im View (Der Benutzer tippt etwas in ein Eingabefeld), werden nicht an das <em>Model</em> zurückgemeldet. Der Entwickler muss sich selber um die Synchronisation von View und Model kümmern.</p>
+
+<h3 id="bidirektionales-databinding-two-way">Bidirektionales Databinding (Two-Way)</h3>
+<p>Beim bidirektionalen wird eine Verknüpfung zwischen Elementen im <em>View</em> und Datenstrukturen im <em>Model</em> hergestellt. Im grafischen Beispiel unten wird jedes Element des Arrays <code>$scope.todos</code> einem <code>&lt;li&gt;</code>-Element im DOM zugeordnet. Wird jetzt z.B. <code>'Staubsaugen'</code> aus dem Array entfernt, wird diese Veränderung dem <em>View</em> gemeldet und auch dort entfernt. Das Template steht jederzeit als Blaupause bereit, um neue Elemente im <em>View</em> erzeugen und verändern zu können.</p>
+
+<p>Der Vorteil dürfte offensichtlich sein. Die manuelle Synchronisation fällt weg und damit auch eine Menge Arbeit und fehleranfälliger Code.</p>
+
+<p><img src="figures/data-binding.png" alt="AngularJS Data Binding" /></p>
+
+<h2 id="ueberblick">Überblick der wichtigsten Komponenten</h2>
+
+<p>Wie in der Einführung angekündigt, gibt es zum Abschluss der Übersicht eine grafische Darstellung aller Komponenten, die AngularJS beinhaltet. Drucke die Übersicht aus und hake ab, was du zu 80% verstanden hast. <a href="figures/angularjs-overview.pdf">Druckversion als PDF herunterladen</a></p>
+
+<p><img src="figures/angularjs-overview.png" alt="AngularJS Überblick" /></p>
+
+<h1 id="basisapplikation">3. Basisapplikation</h1>
+
+<blockquote>
+  <p>Um später einzelne Verwendungsmöglichkeiten der Direktiven nachschlagen zu können, sind die Kapitel nach diesen benannt.</p>
+</blockquote>
+
+<h2 id="ein-erstes-programm-ng-app-ng-model-binding">Ein erstes Programm (ng-app, ng-model, Binding)</h2>
+
+<blockquote>
+  <p><strong>API</strong>:
+  <a href="http://docs.angularjs.org/api/ng.directive:ngApp">ng-app</a> |
+  <a href="http://docs.angularjs.org/api/ng.directive:ngModel">ng-model</a></p>
+</blockquote>
+
+<p>Bevor wir mit der eigentlich Applikation durchstarten, schauen wir uns das Grundgerüst einer Applikation mit AngularJS an. Das Beispiel dazu kannst du <a href="http://jsfiddle.net/angularjs_de/TeAGF/">online</a> ausprobieren oder lokal speichern. Wenn du es lokal abspeichern möchtest, erstelle ein neues Verzeichnis mit beliebigem Namen und eine Datei <code>index.html</code>, in der du den folgenden Quellcode abspeicherst. Rufe die Datei danach im Browser auf. <a href="http://jsfiddle.net/angularjs_de/TeAGF/">Online-Version »</a></p>
+
+<pre><code class="language-html">file: ng-app/index.html
+</code></pre>
+
+<p>Wenn du die Datei im Browser aufrufst, wirst du feststellen, dass jede Textänderung im Eingabefeld eine sofortige Veränderung in der Ausgabe bewirkt.</p>
+
+<h3 id="wie-funktionierts">Wie funktioniert’s?</h3>
+
+<p>Im HTML-Template findest du drei Erweiterungen, die von AngularJS stammen. <code>ng-app</code>, <code>ng-model</code> und <code>{{name}}</code>.</p>
+
+<p>Mit <code>ng-app</code> startet die Magie von AngularJS. Intern wartet AngularJS bis der DOM geladen ist und sucht dann nach dem Attribut <code>ng-app</code>. Dabei kann es an jeder beliebigen Stelle stehen und muss sich nicht im Tag <code>&lt;html&gt;</code> befinden. Statt einer Main-Methode, sorgt <code>ng-app</code> für die Initialisierung.</p>
+
+<p><img src="figures/scope-root.png" alt="AngularJS - Root Scope" /></p>
+
+<p>Zusammen mit der Initialisierung wird etwas erzeugt, was sich Scope nennt. In unserem Fall das erste Scope und somit <code>$rootScope</code> genannt. Scopes dienen als Vermittlungsschicht zwischen View und Controller. Wenn Variablen auf dem Scope erzeugt/verändert werden, wird dies den Elementen auf dem View des Scopes mitgeteilt. An dieser Stelle siehst du, was bidirektionales Databinding konkret bedeutet.</p>
+
+<blockquote>
+  <p>Anmerkung: Variablen werden dynamisch erstellt und müssen nicht vorher auf dem Scope definiert werden.</p>
+</blockquote>
+
+<p>Wenn du nun weißt, dass Scopes als Vermittlungsschicht dienen, sind <code>ng-model</code> und <code>{{name}}</code> einfach zu erklären. <code>ng-model</code> bindet in diesem Fall den Wert von <em>name</em> an das Eingabefeld. {{name}} gibt an dieser Stelle des Templates <em>name</em> aus und ändert sich entsprechend, wenn sich <em>name</em> ändert.</p>
+
+<p>Wo gehört <code>ng-app</code> hin? Wenn du eine reine AngularJS-Applikation schreibst, in das <code>&lt;html&gt;</code>-Tag. Wenn du einzelne Seiten einer bestehenden Applikation erweitern möchtest, in ein <code>&lt;div&gt;</code>-Tag innerhalb von <code>&lt;body&gt;</code>.</p>
+
+<h2 id="ngcontroller">ngController</h2>
+
+<blockquote>
+  <p><strong>API</strong>: <a href="http://docs.angularjs.org/api/ng.directive:ngController">ng-controller</a></p>
+</blockquote>
+
+<p>Applikationen, die nur in einer einzigen HTML-Datei bestehen, sind nicht sonderlich spannend. Wir erweitern unsere Applikation um einen JavaScript-Teil und fügen eine Datei <code>application.js</code> hinzu.</p>
+
+<pre><code class="language-html">file: ng-controller/index.html
+</code></pre>
+
+<p>An dieser Stelle wird <code>ng-controller</code> als neue Direktive hinzugekommen. Wie der Name es vermuten lässt, wird an dieser Stelle ein neuer Controller eingebunden. Damit einher geht auch die Erzeugung eines neuen Scopes. Die Abbildung unten verdeutlicht die entstandene Verschachtelung der Scopes.</p>
+
+<pre><code class="language-javascript">file: ng-controller/application.js
+</code></pre>
+
+<p>Ein Controller in AngularJS ist nichts weiter als eine normale Funktion. Eine Besonderheit ist nur die übergebene Variable <code>$scope</code>. Mit dieser Variable können wir Daten mit dem View austauschen. Dieser Controller macht nichts weiter, als auf dem Scope <code>name</code> den Wert <em>AngularJS</em> hinzuzufügen.</p>
+
+<p><img src="figures/scope-controller.png" alt="AngularJS - Controller Scope" /></p>
+
+<p>Wie man sieht, existieren jetzt zwei Scopes. Das <code>$rootScope</code>, definiert durch <code>ng-app</code> und ein neues Scope, definiert durch <code>ng-controller</code>.</p>
+
+<p><img src="figures/scopes.png" alt="AngularJS - Root Scope" /></p>
+
+<p>Das Bild oberhalb verdeutlicht noch einmal die Kommunikation zwischen Variablen und Scopes. Das Scope ist die Verbindung zwischen View und Controller. Wird eine Variable auf dem Scope geändert, werden alle Elemente im View davon benachrichtigt und der entsprechende Wert geändert.</p>
+
+<h2 id="ngrepeat">ngRepeat</h2>
+
+<blockquote>
+  <p><strong>API</strong>: <a href="http://docs.angularjs.org/api/ng.directive:ngRepeat">ng-repeat</a></p>
+</blockquote>
+
+<p>In echten Applikationen haben wir nicht nur einzelne Werte, sondern strukturierte Daten, häufig in Form von Listen - und Listen sind eine Stärke von AngularJS.</p>
+
+<pre><code class="language-javascript">file: ng-repeat/application.js
+</code></pre>
+
+<p>Wir ändern in diesem Beispiel unseren Controller und stellen ein Array mit Frameworks zusammen, welches Name und URL enthält. An dieser Stelle erkennt man, wie einfach die Arbeit mit AngularJS im Vergleich zu anderen Frameworks ist. Wir benutzen für eine Liste ein einfaches JavaScript-Objekt (<a href="http://de.wikipedia.org/wiki/Plain_Old_Java_Object">POJO</a>), statt von Klassen des Frameworks zu erben. Die Darstellung dieser Liste im View ist ähnlich einfach:</p>
+
+<pre><code class="language-html">file: ng-repeat/index.html
+</code></pre>
+<p>In AngularJS wird die Anweisung, etwas zu wiederholen, direkt in den Tag geschrieben, der wiederholt werden soll: <code>&lt;li ng-repeat="framework in frameworks"&gt;</code>. Wie für einen Controller, wird für jedes einzelne Listenelement ein Scope erzeugt. Deshalb können wir innerhalt des <code>&lt;li&gt;</code>-Elements auf <em>name</em> und <em>url</em> zuzugreifen.</p>
+
+<p>Die Zuweisung für das erste Listenelement würde intern so aussehen:</p>
+
+<pre><code class="language-javascript">$scope.framework = { name: 'AngularJS', url: 'angularjs.org' }
+</code></pre>
+
+<p>Arrays können natürlich über mehrere Ebenen zu verschachtelt werden, um somit z.B. hierarchische Menüs darzustellen.</p>
+
+<h2 id="ngclick-ngchange-ngmouse">ngClick, ngChange, ngMouse…</h2>
+<blockquote>
+  <p><strong>API</strong>:
+  <a href="http://docs.angularjs.org/api/ng.directive:ngClick">ngClick</a> |
+  <a href="http://docs.angularjs.org/api/ng.directive:ngDblclick">ngDblclick</a> |
+  <a href="http://docs.angularjs.org/api/ng.directive:ngMouseup">ngMouseup</a> |
+  <a href="http://docs.angularjs.org/api/ng.directive:ngMousedown">ngMousedown</a> |
+  <a href="http://docs.angularjs.org/api/ng.directive:ngMouseenter">ngMouseenter</a> |
+  <a href="http://docs.angularjs.org/api/ng.directive:ngMouseleave">ngMouseleave</a> |
+  <a href="http://docs.angularjs.org/api/ng.directive:ngMousemove">ngMousemove</a> |
+  <a href="http://docs.angularjs.org/api/ng.directive:ngMouseover">ngMouseover</a></p>
+</blockquote>
+
+<blockquote>
+  <p><code>&lt;a href&gt;&lt;/a&gt;</code> AngularJS fügt bei einem leeren href automatisch ein e.preventDefault() ein.</p>
+</blockquote>
+
+<pre><code class="language-html">file: ng-click/index.html
+</code></pre>
+
+<pre><code class="language-javascript">file: ng-click/application.js
+</code></pre>
+
+<h2 id="input">Input…</h2>
+<p><strong>API</strong>:
+<a href="http://docs.angularjs.org/api/ng.directive:ngChange">ngChange</a> /</p>
+
+<p>ngModel + ng-trim=”false”</p>
+
+<p>form
+input
+select
+textarea</p>
+
+<p>ngBind
+ngBindHtmlUnsafe
+ngBindTemplate
+ngChecked
+ngClass
+ngCloak
+ngCsp
+ngDisabled
+ngForm
+ngHide
+ngHref
+ngInclude
+ngInit
+ngList</p>
+
+<p>ngMultiple
+ngNonBindable
+ngPluralize
+ngReadonly
+ngSelected
+ngShow
+ngSrc
+ngStyle
+ngSubmit
+ngSwitch
+ngTransclude
+ngView</p>
+
+<pre><code class="language-html">file: shop/index.html
+</code></pre>
+
+<pre><code class="language-html">file: shop/about.html
+</code></pre>
+
+<pre><code class="language-html">file: shop/articles.html
+</code></pre>
+
+<pre><code class="language-html">file: shop/cart.html
+</code></pre>
+
+<pre><code class="language-javascript">file: shop/application.js
+</code></pre>
+
+<h2 id="die-mglichkeiten-von-">Die Möglichkeiten von {{…}}</h2>
+
+<h2 id="weitere-ng-direktiven">Weitere ng-Direktiven</h2>
+
+<p>ngClassEven
+ngClassOdd</p>
+
+<h2 id="form-validierung">Form-Validierung</h2>
+
+<h3 id="eigene-validierungen-schreiben">Eigene Validierungen schreiben</h3>
+
+<p>API: src/ng/directive/input.js</p>
+
+<h2 id="animations">Animationen / Animations mit ng-animate</h2>
+
+<p>Unterstützung für Animationen finden wir im Moment nur im Entwicklungszweig ab Version 1.1.4 von AngularJS. Dieses Kapitel wird erst gefüllt, wenn die nächste stabile Version erscheint.</p>
+
+<p>Schaut bis dahin in meinem Artikel über <a href="http://angularjs.de/artikel/angularjs-animationen-ng-animate">ng-animate</a>.</p>
+
+<h1 id="erweiterungen-der-applikation">4. Erweiterungen der Applikation</h1>
+
+<h2 id="rest-kommunikation">REST-Kommunikation mit dem Server</h2>
+
+<blockquote>
+  <blockquote>
+    <p>TODO</p>
+  </blockquote>
+</blockquote>
+
+<h2 id="eigene-direktiven">Eigene Direktiven erstellen</h2>
+
+<h3 id="isolierte-scopes">Isolierte Scopes</h3>
+
+<blockquote>
+  <blockquote>
+    <p>TODO</p>
+  </blockquote>
+</blockquote>
+
+<h3 id="transclusion">Transclusion</h3>
+
+<blockquote>
+  <blockquote>
+    <p>TODO</p>
+  </blockquote>
+</blockquote>
+
+<h3 id="w3c">W3C</h3>
+
+<blockquote>
+  <blockquote>
+    <p>TODO</p>
+  </blockquote>
+</blockquote>
+
+<h2 id="eigene-filter">Eigene Filter erstellen</h2>
+
+<h2 id="suchmaschinenoptimierung">SEO / Suchmaschinenoptimierung</h2>
+
+<blockquote>
+  <p>Zuallererst: AngularJS ist für die Erstellung von Webapplikationen und weniger für die Erstellung von normalen Webseiten und dem damit verbundenen Wunsch nach Suchmaschinenoptimierung ausgelegt.</p>
+</blockquote>
+
+<p>Wer dennoch AngularJS als Technologie für seine Webseite einsetzen möchte, bekommt hier einen Ansatz zum Starten. Leider ist es nicht möglich, ein allgemeingültiges Beispiel zu liefern, da das Meiste von der verwendeten Technologie im Backend abhängt.</p>
+
+<p>Fangen wir bei der Betrachtung mit dem eigentlichen Problem bei der Suchmaschinenoptimierung an und teilen die Lösung in Suchmaschine, Frontend (AngularJS-Konfiguration) und Backend (deine Webserver-Technologie) auf.</p>
+
+<h3 id="problemdefinition">Problemdefinition</h3>
+
+<blockquote>
+  <blockquote>
+    <p>TODO</p>
+  </blockquote>
+</blockquote>
+
+<h3 id="suchmaschine">Suchmaschine</h3>
+
+<blockquote>
+  <blockquote>
+    <p>TODO</p>
+  </blockquote>
+</blockquote>
+
+<h3 id="angularjs-konfiguration">AngularJS-Konfiguration</h3>
+
+<p>angular.module(‘HashBangURLs’, []).config([‘$locationProvider’, function($location) {
+  $location.hashPrefix(‘!’);
+}]);</p>
+
+<h2 id="twitter-bootstrap">Erweiterungen für Twitter Bootstrap</h2>
+
+<p>Wenn wir über Erweiterungen für Twitter Bootstrap reden, meinen wir natürlich den JavaScript-Teil. Um AngularJS mit Twitter Bootstrap einzusetzen,
+gibt es im Momement zwei Alternativen - UI Bootstrap und AngularStrap. Beide sind quelloffen und unter der MIT-Lizenz auf Github verfügbar.</p>
+
+<h3 id="ui-bootstrap">UI Bootstrap</h3>
+
+<p>UI Bootstrap ist Bestandteil des bekannten Projektes <em>Angular UI</em>, welches oft genutzte Komponenten für AngularJS zur Verfügung stellt. UI Bootstrap verfolgt den Ansatz, den bestehenden Code von <em>Bootstrap.js</em> komplett in native Direktiven zu überführen. <em>UI Bootstrap</em> benutzt sprechende Namen für Elemente, wie z.B. <code>&lt;alert&gt;&lt;/alert&gt;</code> oder <code>&lt;accordion&gt;&lt;/accordion&gt;</code>.</p>
+
+<p><em>Die Abhängigkeiten bestehen aus:</em></p>
+
+<ul>
+  <li>AngularJS</li>
+  <li>bootstrap.css</li>
+</ul>
+
+<p><em>Links:</em></p>
+
+<ul>
+  <li>Homepage: <a href="http://angular-ui.github.com/bootstrap/">UI Bootstrap</a></li>
+  <li>Github: <a href="https://github.com/angular-ui/bootstrap">Quellcode</a> (MIT-Lizenz)</li>
+</ul>
+
+<h3 id="angularstrap">AngularStrap</h3>
+
+<p>AngularStrap geht einen anderen Weg und funktioniert als Wrapper der Bibliotheken von Bootstrap. Im Kern werden die Funktionen von Bootstrap wiederverwendet.
+Somit sind jQuery und die <em>boostrap.js</em> eine unbedingte Voraussetzung. Die Konfiguration der Bibliothek wird über Attribute vorgenommen, wie z.B. <code>&lt;button type="button" class="btn" bs-dropdown="dropdown"&gt;...&lt;/button&gt;</code>.</p>
+
+<p><em>Die Abhängigkeiten bestehen aus:</em></p>
+
+<ul>
+  <li>AngularJS</li>
+  <li>jQuery</li>
+  <li>bootstrap.js</li>
+  <li>bootstrap.css</li>
+</ul>
+
+<p><em>Links:</em></p>
+
+<ul>
+  <li>Homepage: <a href="http://mgcrea.github.com/angular-strap/">AngularStrap</a></li>
+  <li>Github: <a href="https://github.com/mgcrea/angular-strap">Quellcode</a> (MIT-Lizenz)</li>
+</ul>
+
+<h2 id="module">Module: Die Applikation aufteilen</h2>
+
+<p>Die meisten Anwendungen verfügen über eine main-Methode, die alle benötigen Komponenten initialisiert und lädt. AngularJS geht einen anderen Weg und lässt deklarativ den Ladeprozess beschreiben. Diese Vorgehensweise hat mehrere Vorteile:</p>
+
+<ul>
+  <li>Der Prozess ist deklarativ und leichter zu verstehen.</li>
+  <li>Für Unit-Tests müssen nich alle Module geladen werden. Dies vereinfacht das Testen und erhöht die Testgeschwindigkeit.</li>
+  <li>Erweiterungsbibliotheken können in wiederverwendbare Module gekapselt werden.</li>
+  <li>Die Module können in beliebiger Reihenfolge und parallel geladen werden.</li>
+</ul>
+
+<h1 id="testen">5. Testen</h1>
+
+<h2 id="testen-von-controllern">Testen von Controllern</h2>
+
+<blockquote>
+  <blockquote>
+    <p>TODO</p>
+  </blockquote>
+</blockquote>
+
+<h2 id="testen-von-direktiven">Testen von Direktiven</h2>
+
+<blockquote>
+  <blockquote>
+    <p>TODO</p>
+  </blockquote>
+</blockquote>
+
+<h1 id="vertiefung">6. Konzepte und Hintergründe</h1>
+
+<h2 id="dependency-injection">Dependency Injection und der Injektor von AngularJS</h2>
+
+<p><em>Dependecy Injection</em> ist auch unter dem Namen <em>Inversion of control</em> bekannt. Bevor wir zeigen, welche Kontrolle dise umgekehrt und welche Vorteile sich daraus ergeben, zeigen wir zuerst den klassischen Weg.</p>
+
+<h3 id="der-klassische-weg">Der klassische Weg</h3>
+
+<p>Klassisch kümmert sich eine Funktion selber um das instanziieren von weiteren Objekten. Gucken wir uns folgende Funktion an:</p>
+
+<pre><code class="language-javascript">function findUser(user){
+  var db = new Database(...);
+  db.find('users', user);
+}
+</code></pre>
+
+<p>Die Funtkion <code>findUser</code> sucht einen Benutzer aus einer Datebank-Tabelle heraus. Dazu muss eine Verbindung zu einer Datenbank hergestellt werden. <code>findUser</code> kümmert sich selber darum, das ensprechende Objekt <code>Database</code> zu instanziieren. Die Kontrolle, Objekte zu erstellen liegt somit bei der Funktion selbst.</p>
+
+<h3 id="mit-dependecy-injection">Mit Dependecy Injection</h3>
+
+<p>Mit <em>Dependency Injection</em> wird die Kontrolle über das Instanziieren der Funktion entzogen. Die Kontrolle hat jetzt eine zentrale Stelle, die diese Arbeit erledigt. Diese zentrale Stelle nennen wir Injektor. Die Funktion muss nicht wissen, woher <code>db</code> kommt und wie <code>db</code> instanziiert wird. Wir könnten also Folgendes schreiben:</p>
+
+<pre><code class="language-javascript">function findUser(db){
+  db.find('users', user);
+}
+</code></pre>
+
+<h3 id="der-injektion-und-die-richtige-reihenfolge">Der Injektion und die richtige Reihenfolge</h3>
+
+<p>Der Injektor kann nicht nur Instanzen zu erzeugen, sondern kümmert sich auch darum, diese in die richtige Reihenfolge zu setzen. Nehmen wir ein Beispiel mit untereinander abhängigen Services:</p>
+
+<p><img src="figures/angularjs-injector.png" alt="AngularJS - Injektor" /></p>
+
+<p>Als Pseudo-JavaScript würden wir die Servies folgendermaßen erzeugen:</p>
+
+<pre><code class="language-javascript">service 'S1', function(S2, S5, S6)
+service 'S2', function(S3, S4, S5)
+service 'S3', function(S6)
+service 'S4', function(S3, S5)
+service 'S5', function()
+service 'S6', function()
+</code></pre>
+
+<p>Der Injektor von AngularJS löst den Baum von Abhängigkeiten korrekt auf und sorgt für die richtige Reihenfolge beim Instanziieren: <code>S6</code>, <code>S3</code>, <code>S5</code>, <code>S4</code>, <code>S2</code>, <code>S1</code>.</p>
+
+<h3 id="welche-vorteile-bringt-dependency-injection">Welche Vorteile bringt Dependency Injection?</h3>
+
+<ul>
+  <li>Der Code ist modularer und wiederverwendbar</li>
+  <li>Der Code ist meistens wartbarer</li>
+  <li>Der Code einfacher zu testen</li>
+  <li>Das API ist simpler und abstrakter</li>
+</ul>
+
+<h3 id="der-injektor-von-angularjs">Der Injektor von AngularJS</h3>
+
+<p>Der Injektor von AngularJS erkennt die benutzten Services anhand der Parameternamen. Im Folgenden werden Database <code>DBUsername</code> und <code>DBPassword</code> übergeben. Der Injektor sucht dementsprechend nach Services mit den Namen <code>DBUsername</code> und <code>DBPassword</code>.</p>
+
+<pre><code class="language-javascript">app.value('DBUsername', 'root');
+app.value('DBPassword', 'secret');
+app.factory('Database', function(DBUsername, DBPassword) { ... });
+</code></pre>
+
+<p>Diese Konvention ist sinnvoll, um sich zusätzliche Konfigurationsdateien zu sparen. Alternativ müsste nämlich eine Mapping-Datei erstellt werden, die Funktionsnamen mit entsprechenden Abhängigkeiten enthält.</p>
+
+<p>AngularJS selbst ist von Grund auf mit <em>Dependency Injection</em> aufgebaut. Fast alles ist ein <a href="#services">Service</a>.</p>
+
+<h2 id="services">Factory, Service und Provider</h2>
+
+<p>Nachdem wir <a href="#dependency-injection">Dependency Injection</a> verstanden haben, lernen wir diese sinnvoll zu gebrauchen. Der Injektor vor AngularJS bietet mehrere Methoden, um Funktionen zu erzeugen, die später injiziert werden können. Die gesamten Methoden werden in der Dokumentation Services genannt und sind nicht zu verwechseln mit der einzelnen Methode <em>service</em>. Alle Services sind Singletons. Sie bestehen aus:</p>
+
+<ul>
+  <li><a href="#constant">Constant</a></li>
+  <li><a href="#value">Value</a></li>
+  <li><a href="#service">Service</a></li>
+  <li><a href="#factory">Factory</a></li>
+  <li><a href="#provider">Provider</a></li>
+</ul>
+
+<p>Constant macht dabei genau das, was der Name vermuten lässt - eine Konstante definieren. Die restlichen vier Methoden sind dynamisch und bauen aufeinander auf (siehe Abbildung). Provider steht dabei ganz oben und bietet die meisten Möglichkeiten an. Die restlichen Methoden bieten ein vereinfachtes Interface für häufig genutzte Anwendungsfälle. Wir gehen im Folgenden auf die Unterschiede und Einsatzmöglichkeiten ein.</p>
+
+<p><img src="figures/services.png" alt="AngularJS - Root Scope" /></p>
+
+<h3 id="provider">Provider</h3>
+
+<blockquote>
+  <p>Wir benutzen Provider, wenn wir einen Service zum Applikationsstart konfigurieren möchten.</p>
+</blockquote>
+
+<p>Provider ist eine Singeleton-Funktion mit $get-Methode und grundlegend für alle weitern Services. Nur Provider können wir zum Applikationsstart konfigurieren, was auch gleich den Verwendungszweck klärt. Auch in Provider können wir andere Services injizieren. Diese müssen wir der <code>$get</code>-Funktion als Parameter übergeben.</p>
+
+<p>Beispiel:</p>
+
+<pre><code class="language-javascript">app.provider('helloWorld', function() {
+  this.setName = function(name) { this.name = name; };
+
+  this.$get = function() {
+    var self = this;
+    return {
+      sayHello: function() { return "Hello, " + self.name + "!"; }
+    }
+  };
+});
+
+app.config(function(helloWorldProvider){
+  helloWorldProvider.setName('World');
+});
+</code></pre>
+
+<h3 id="factory">Factory</h3>
+
+<blockquote>
+  <p>Wir benutzen eine Factory, wenn wir Funktionen injizieren möchten. Wenn du dir unsicher bist, ob du Factory oder Service nutzen sollst, ist es zu 90% eine Factory.</p>
+</blockquote>
+
+<p>Eine Factory nutzt <a href="#provider">Provider</a> als Ausgangsbasis und bietet ein vereinfachtes Interface an. Wenn wir uns einen Ausschnitt aus dem Quellcode anschauen, sehen wir, dass Factory nichts anderes macht, als die Funktion, die wir als Parameter übergeben, an die  <code>$get</code>-Methode von Provider zu delegieren.</p>
+
+<pre><code class="language-javascript">function factory(name, factoryFn) { return provider(name, { $get: factoryFn }); }
+</code></pre>
+
+<p>Beispiel:</p>
+
+<pre><code class="language-javascript">app.factory('helloWorldFromFactory', function() {
+  return {
+    sayHello: function() { return "Hello, World!"; }
+  };
+});
+</code></pre>
+
+<h3 id="service">Service</h3>
+
+<p>Ein Service ist einer <a href="#factory">Factory</a> sehr ähnlich. Im Unterschied zu Factory wird die übergebene Funktion mit <code>new</code> konstruiert. Historisch wurde die Vereinfachung für Coffeescript eingeführt. Coffeescript unterstützt <a href="http://coffeescript.org/#classes">Pseudoklassen</a>, die nur mit <code>new</code> verwendet werden können. In den meisten Fällen solltest du eine Factory verwenden.</p>
+
+<p>Beispiel:</p>
+
+<pre><code class="language-javascript">app.service('helloWorldFromService', function() {
+  this.sayHello = function() { return "Hello, World!"; };
+});
+</code></pre>
+
+<h3 id="value">Value</h3>
+
+<blockquote>
+  <p>Wir benutzen Values, wenn wir einfache Werte (oder Funktionen) übergeben möchten und dabei keine weiteren Services injizieren wollen.</p>
+</blockquote>
+
+<p>Ein Value ist eine weitere Vereinfachung einer <a href="#factory">Factory</a>. Einem Value kann man direkt einen String, Integer, Boolean übergeben, ohne sich die Mühe zu machen, einen Funktion mit einem Rückgabewert zu übergeben. In diesem Fall ist es aber nicht möglich, andere Services zu injizieren. Der Quellcode sieht ungefähr folgendermaßen aus:</p>
+
+<pre><code class="language-javascript">function value(name, value) { return factory(name, function() {return value;}); }
+</code></pre>
+
+<p>Beispiel:</p>
+
+<pre><code class="language-javascript">app.value('helloWorldFromService', "Hello World!");
+</code></pre>
+
+<h3 id="constant">Constant</h3>
+
+<blockquote>
+  <p>Constant benutzen wir, wenn ein Wert sich später nicht mehr ändern darf.</p>
+</blockquote>
+
+<p>Die Konstante verhält sich anders als die anderen Services. Nachdem einer Konstante ein Wert zugewiesen wurde, kann dieser nicht mehr verändert werden. Die Unveränderbarkeit äußert sich auf zwei Weisen:</p>
+
+<ul>
+  <li>Wenn wir z.B. <code>app.constant('pi', 3.14)</code> gesetzt haben, führt eine erneute Zuweisung <code>app.constant('pi', 3.1415)</code> zu keiner Änderung.</li>
+  <li>Die Rückgabewerte der anderen Services können durch <a href="#decorator">Decorator</a> verändert werden. Bei Konstanten ist das nicht möglich.</li>
+</ul>
+
+<p>Beispiel:</p>
+
+<pre><code class="language-javascript">app.constant('pi', 3.14159265359);
+</code></pre>
+
+<h2 id="decorator">Decorator</h2>
+
+<blockquote>
+  <p>Der Decorator (auch Dekorierer) ist ein Entwurfsmuster und eine flexible Alternative zur Unterklassenbildung, um eine Klasse um zusätzliche Funktionalitäten zu erweitern. <em>Entwurfsmuster. 5 Auflage</em></p>
+</blockquote>
+
+<p>Mit Hilfe eines Decorators können wir Funktionalitäten von Services (<a href="#provider">Provider</a>, <a href="#factory">Factory</a>, <a href="#service">Service</a>, <a href="#value">Value</a>) erweitern oder Rückgabewerte verändern. Konstanten können nicht verändert werden.</p>
+
+<p>Erstellung eines Decorators:</p>
+
+<ul>
+  <li>Ein Decorator wird über <code>$provide</code> in der <em>config</em>-Methode erstellt.</li>
+  <li>Eine Kurzform wie für Factories, etc. à la <code>app.decorator(...)</code> gibt es nicht.</li>
+  <li>Mehrere Decorator lassen sich hintereinanderschalten.</li>
+</ul>
+
+<p>In unserem Beispiel definieren wir ein einfaches Value mit dem Wert <em>AngularJS</em>. Über Decorator erweitern wir die Zeichenkette zwei Mal. Wie wir sehen, können Decorator mehrfach angewendet werden. Wir erhalten als Endergebnis <em>AngularJS macht Webentwicklung einfach und elegant!</em>. Die Decorator können natürlich auch in separaten <em>config</em>-Methoden stehen.</p>
+
+<pre><code class="language-html">file: decorator/index.html
+</code></pre>
+
+<pre><code class="language-javascript">file: decorator/application.js
+</code></pre>
+
+<h2 id="unobtrusive-javascript">Unobtrusive JavaScript</h2>
+
+<p>Seit Jahren wird Unobtrusive JavaScript als Heilmittel für komplizierte Applikationen propagiert. Die Idee, Logik aus dem Template zu entfernen, ist gut und richtig. Da die Ereignis-Handler in AngularJS wieder stark an alte Zeiten erinnern, möchten wir auf dieses Thema hier kurz eingehen. Nehmen wir als Beispiel <code>ng-click</code>:</p>
+
+<pre><code class="language-html">&lt;button ng-click="createTask()"&gt;Aufgabe erstellen&lt;/button&gt;
+</code></pre>
+
+<p>Im ersten Moment sieht die letzte Zeile wie das <code>onclick</code>-Ereignis von mit einem anderen Namen aus. Machen wir also wieder einen Rückschritt?</p>
+
+<p>Schauen wir genauer hin:</p>
+
+<ul>
+  <li>Es befindet sich an dieser Stelle keine Logik. <code>createTask()</code> dient lediglich als Bindeglied zwischen View und Controller.</li>
+  <li>Wir können an dieser Stelle nur beschränkt Funktionen ausführen. <code>ng-click</code> begrenzt dies auf einen AngularJS-Ausdruck (<a href="http://docs.angularjs.org/guide/expression">Expression</a>). Ausdrücke benutzen kein <code>eval()</code>. Ein <code>onclick</code>-Ereignis dagegen kann beliebiges JavaScript ausführen.</li>
+  <li><code>onclick</code>-Ereignisse greifen auf den Globalen Namespace zu. <code>ng-click</code> ist beschränkt auf den aktuellen Scope.</li>
+</ul>
+
+<p>Bisher hat Unobtrusive JavaScript seine Versprechen nicht halten können. Das Ergebnis ist ein unklares Verhältnis zwischen Template und Event-Handlern. AngularJS gibt dieses Verhältnis explizit an. Somit können wir zu einem hohen Prozentsatz direkt im HTML-Template ablesen, welche Teile dynamisch sind.</p>
+
+<h2 id="minification">Verwendung von Minifiern</h2>
+
+<p>Bei der Verwendung von AngularJS und Minifiern gibt es einen Fallstrick. Der Injektor von AngularJS erzeugt neue Objekte anhand der Namen, die einer Funktion übergeben werden. Nehmen wir als Beispiel einen Controller, der folgendermaßen aussieht:</p>
+
+<pre><code class="language-javascript">function MeinController($scope, MeinService) { ... }
+</code></pre>
+
+<p>Nach der Minification:</p>
+
+<pre><code class="language-javascript">function MeinController(a, b) { ... }
+</code></pre>
+
+<h3 id="steuerung-ber-inject">Steuerung über $inject</h3>
+
+<p>Hier wird das Problem offensichtlich. Da nun <code>a</code> und <code>b</code> Funktionswerte übergeben werden, versucht der Injektor Instanzen von <code>a</code> und <code>b</code> statt von <code>$scope</code> und <code>MeinService</code> zu erzeugen. Um dieses Problem zu umgehen, müssen wir den Injektor in diesen Fällen direkt steuern. Die direkte Steuerung des Injektors erfolgt über  ein Arrays von Strings:</p>
+
+<pre><code class="language-javascript">var MeinController = function(a, b) {
+  ...
+}
+MeinController.$inject = ['$scope', 'MeinService'];
+</code></pre>
+
+<p>Wie man sieht, haben wir den Erzeugung der Funktion leicht verändern müssen und eine temporäre Variable eingefügt. Außerdem müssen wir bei der Veränderung des Funktionsaufrufs unbedingt die Steuerung des Injektors nachziehen. Für Controller benutzen wir diese Art der Steuerung.</p>
+
+<h3 id="steuerung-ber-inline-annotation">Steuerung über inline-Annotation</h3>
+
+<p>Wenn wir Funktionen übergeben, die den Injektor benutzen, wird die Art der Steuerung, wie wir sie gerade kennengelernt haben, unbequem. Aus</p>
+
+<pre><code class="language-javascript">app.factory('todo', function($http) { ... });
+</code></pre>
+
+<p>wird</p>
+
+<pre><code class="language-javascript">var todoFactory = function(z) { ... };
+todoFactory.$inject = ['$http'];
+app.factory('todo', todoFactory);
+</code></pre>
+
+<p>Für diesen Fall gibt es noch eine zweite Schreibweise - die inline-Annotation.</p>
+
+<pre><code class="language-javascript">app.factory('todo', ['$http', function($http) {
+  ...
+}]);
+</code></pre>
+
+<h3 id="alternative">Alternative</h3>
+
+<blockquote>
+  <blockquote>
+    <p>TODO</p>
+  </blockquote>
+</blockquote>
+
+<p>Die längere Alternative für den Injektor besteht nicht nur aus mehr Zeichen, sondern lässt sich auch schlechter lesen.</p>
+
+<p>https://github.com/btford/ngmin</p>
+
+<h3 id="zusammenfassung">Zusammenfassung</h3>
+
+<p>Keine der beiden Schreibweisen hat Vorteile gegenüber der Anderen - sie sind gleichwertig. Soweit Minification benutzt wird, müssen sie überall eingesetzt werden, wo der Injektor verwendet wird.</p>
+
+<h2 id="jqlite">jqLite - Kompatibilität mit jQuery</h2>
+
+<p>AngularJS ist Kompatibel mit jQuery. AngularJS enthält sogar eine abgespeckte Version von jQuery. Diese wird intern <a href="https://github.com/angular/angular.js/blob/master/src/jqLite.js">jqLite</a> genannt. jqLite enthält nur die wichtigsten Funktionen, um die Arbeit am DOM in Direktiven zu erleichtern. Neben dem fehlenden Funktionsumfang ist auch die Performance etwas schlechter.</p>
+
+<p>Wenn jQuery allerdings eingebunden ist, erkennt AngularJS dies und ersetzt jqLite durch die jQuery. Das bedeutet, wenn nur AngularJS eingebunden ist, verweist <code>angular.element</code> auf jqLite. Wird jQuery zusätzlich eingebunden, verweist <code>angular.element</code> auf jQuery.</p>
+
+<p>Es ist deshalb immer ratsam in Direktiven z.B. <code>angular.element('.item')</code> statt <code>$('.item')</code> zu schreiben, um ein Element zu referenzieren.</p>
+
+<p>Unterstützt werden:</p>
+
+<ul>
+  <li><a href="http://api.jquery.com/addClass/">addClass()</a></li>
+  <li><a href="http://api.jquery.com/after/">after()</a></li>
+  <li><a href="http://api.jquery.com/append/">append()</a></li>
+  <li><a href="http://api.jquery.com/attr/">attr()</a></li>
+  <li><a href="http://api.jquery.com/bind/">bind()</a></li>
+  <li><a href="http://api.jquery.com/children/">children()</a></li>
+  <li><a href="http://api.jquery.com/clone/">clone()</a></li>
+  <li><a href="http://api.jquery.com/contents/">contents()</a></li>
+  <li><a href="http://api.jquery.com/css/">css()</a></li>
+  <li><a href="http://api.jquery.com/data/">data()</a></li>
+  <li><a href="http://api.jquery.com/eq/">eq()</a></li>
+  <li><a href="http://api.jquery.com/find/">find()</a> <em>- Begrenzt auch die Suche nach Tag-Namen</em></li>
+  <li><a href="http://api.jquery.com/hasClass/">hasClass()</a></li>
+  <li><a href="http://api.jquery.com/html/">html()</a></li>
+  <li><a href="http://api.jquery.com/next/">next()</a></li>
+  <li><a href="http://api.jquery.com/parent/">parent()</a></li>
+  <li><a href="http://api.jquery.com/prepend/">prepend()</a></li>
+  <li><a href="http://api.jquery.com/prop/">prop()</a></li>
+  <li><a href="http://api.jquery.com/ready/">ready()</a></li>
+  <li><a href="http://api.jquery.com/remove/">remove()</a></li>
+  <li><a href="http://api.jquery.com/removeAttr/">removeAttr()</a></li>
+  <li><a href="http://api.jquery.com/removeClass/">removeClass()</a></li>
+  <li><a href="http://api.jquery.com/removeData/">removeData()</a></li>
+  <li><a href="http://api.jquery.com/replaceWith/">replaceWith()</a></li>
+  <li><a href="http://api.jquery.com/text/">text()</a></li>
+  <li><a href="http://api.jquery.com/toggleClass/">toggleClass()</a></li>
+  <li><a href="http://api.jquery.com/triggerHandler/">triggerHandler()</a></li>
+  <li><a href="http://api.jquery.com/unbind/">unbind()</a></li>
+  <li><a href="http://api.jquery.com/val/">val()</a></li>
+  <li><a href="http://api.jquery.com/wrap/">wrap()</a></li>
+</ul>
+
+<p>Für den aktuellsten Stand lohnt sich ein Blick in den Quellcode: <a href="https://github.com/angular/angular.js/blob/master/src/jqLite.js">jqLite</a>.</p>
+
+<h2 id="browser-kompatibilitaet">Internet Explorer - Kompatibilität (IE6, IE7, IE8)</h2>
+
+<p>AngularJS ist von Haus aus kompatibel zum Internet Explorer ab Version 9. Kompatibilität mit älteren Version zu erreichen ist möglich und erfordert nur mäßigen Aufwand.</p>
+
+<p>Die Kompatibilität mit älteren Versionen des Internet Explorers bricht an zwei Stellen. Zum Einen fehlt eine vollständige JavaScript-Unterstützung und zum Anderen treten Probleme mit HTML-Elementen von AngularJS auf.</p>
+
+<h3 id="javascript-erweiterungen-ie6--ie7">JavaScript-Erweiterungen (IE6 / IE7)</h3>
+
+<p>AngularJS benötigt JSON.stringify. Da JSON erst ab dem Internet Explorer 8 <a href="http://blogs.msdn.com/b/ie/archive/2008/09/10/native-json-in-ie8.aspx">unterstützt</a> unterstützt wird, müssen wir ältere Versionen mit so genannten Polyfills nachrüsten. Dies sind Bibliotheken, die Funktionen in JavaScript implementieren, welche in neueren Browsern nativ vorhanden sind.</p>
+
+<p>Ein bekannter Polyfill ist <a href="http://bestiejs.github.com/json3/">JSON3</a>. Diesen platzieren wir konditional im Head des HTML-Dokumentes.</p>
+
+<p>ACHTUNG: JSON3 muss vor AngularJS geladen werden.</p>
+
+<pre><code class="language-html">&lt;head&gt;
+  &lt;!--[if lte IE 8]&gt;
+    &lt;script src="/javascripts/json3.min.js"&gt;&lt;/script&gt;
+  &lt;![endif]--&gt;
+  &lt;script src="/javascripts/angular.min.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+</code></pre>
+
+<h3 id="html-elemente-ie6-8">HTML-Elemente (IE6-8)</h3>
+
+<p>Im HTML-Bereich krankt die Unterstützung für AngularJS an den gleichen Problemen wie HTML5. Ältere Versionen des Internet Explorers können mit unbekannten Elementen nicht richtig umgehen und sortieren diese im DOM falsch ein. AngularJS benutzt eigene Elemente, wie z.B. <code>&lt;ng-include&gt;</code> oder <code>&lt;ng-view&gt;</code>, die in älteren HTML-Standards fehlen. Damit der Internet Explorer diese Elemente korrekt behandelt, müssen sie diesem vor der ersten Benutzung bekannt gemacht werden.</p>
+
+<p>Jedes einzelne Element, was später verwendet werden soll, muss im Head-Bereich definiert werden. Dabei sind sowohl die Elemente gemeint, die von AngularJS mitgeliefert werden als auch Elemente, die durch eigene Direktiven enstehen. Erzeugst du z.B. eine neue Direktive, die als Element <code>&lt;tabs&gt;</code> benutzt, musst du im Head <code>document.createElement('tabs')</code> schreiben.</p>
+
+<pre><code class="language-html">&lt;head&gt;
+&lt;!--[if lte IE 8]&gt;
+  &lt;script&gt;
+    document.createElement('ng-include');
+    document.createElement('ng-view');
+    document.createElement('mein-tag');
+  &lt;/script&gt;
+&lt;![endif]--&gt;
+&lt;/head&gt;
+</code></pre>
+
+<p>Erweiterungen in Form von Attributen <code>&lt;li ng-repeat="..."&gt;&lt;/li&gt;</code> werden gleich erkannt und müssen nicht gesondert behandelt werden.</p>
+
+<h2 id="promises">Promises [TODO]</h2>
+
+<h3 id="was-sind-promises">Was sind Promises</h3>
+
+<p>Promises sind</p>
+
+<h3 id="wofr-werden-promises-eingesetzt">Wofür werden Promises eingesetzt</h3>
+
+<p>Nehmen wir an, ein Vorgang kann nicht sofort erledigt werden. Entweder muss etwas Aufwändiges berechnet werden oder es werden Daten vom Server abgerufen. Dennoch möchten wir sofort etwas zurückgeben lassen, um damit arbeiten zu können. Wir haben dabei für eine zeitlang noch nicht das echte Ergebnis ist und wissen auch nicht, wann wir das echte Ergebnis geliefert bekommen. Einen Service, der so etwas ermöglicht, nennen wir Promise. Statt dem echten Ergebnis bekommen wir zuerst ein Objekt auf dem wir Methoden aufrufen können. Wenn wir das Ergebnis erhalten haben, werden diese Methoden direkt ausgeführt. Bis dahin liegen sie in einer Warteschlange. Dies ist ein sehr nützliches Pattern, wenn oft Daten ausgetauscht werden.</p>
+
+<p>Formaler ausgedrückt:</p>
+
+<ul>
+  <li>Promises bieten ein einheitliches Interface für asynchrone Funktionsaufrufe</li>
+  <li>Promises können das Gesamtergebnis von mehreren asychronen Funktionsaufrufen liefern</li>
+</ul>
+
+<p>Um Daten asynchron zu verarbeiten, können wir auch Callbacks einsetzen. Deshalb gehen wir an dieser Stelle auf deren Nachteile ein.</p>
+
+<h3 id="nachteile-von-klassisches-callbacks">Nachteile von klassisches Callbacks</h3>
+
+<p>Asynchrone Funktionsaufrufe hat man klassisch in Form von Callbacks vorliegen. Als Beispiel nehmen wir einen Funktionsaufruf per AJAX in jQuery:</p>
+
+<pre><code class="language-javascript">$.get('/tasks', { success: onSuccess, failure: onFailure, always: onAlways });
+</code></pre>
+
+<p>Wo liegt der Nachteil an dieser Art der asynchronen Kommunikation?</p>
+
+<ul>
+  <li>Ganz verschiedene Dinge werden mit unterschiedlichen Aufgaben werden im gleichen Codesegement aufgerufen. Es wären z.B. Aufrufe von Animationen, Einfügen von neuen DOM-Elementen oder Blockieren von Form-Elementen möglich.</li>
+  <li>Ohne Trigger oder spezielle Vorkehrungen wäre die Erweiterung des Callbacks nicht möglich. Diese Tatsache ist immer wieder für Entwickler von Plugins ärgerlich.</li>
+  <li>Das Zusammenspiel mit mehreren Callbacks gestaltet sich schwierig. Eine Verschachtelung erzeugt eine <em>Pyramid of Doom</em> (siehe Beispiel). Ein gleichzeichtigtes Abschicken von mehreren Callbacks, bei denen das Ergebnis zusammengefügt wird, erfordert im Verhältnis enormen Aufwand.</li>
+</ul>
+
+<pre><code class="language-javascript">// Pyramid of Doom
+aufruf1(function(ergebnis1) {
+  aufruf2(function(ergebnis2) {
+    aufruf3(function(ergebnis3) { // ...
+    });
+  });
+});
+</code></pre>
+
+<p>Natürlich könnte man alles über Trigger steuern. Das heißt für jeden Callback im Erfolgs- und Fehlerfall müsste man einen Trigger schreiben und eine sinnvolle Benamung dafür suchen. Promises sind dagegen eine Methode für die Bequemlichkeit. Sie können verkettet statt geschachtelt werden und das Ergebnis mehrerer Promises kann sehr einfach zusammengefügt werden.</p>
+
+<h3 id="der-aufbau-von-promises">Der Aufbau von Promises</h3>
+
+<p>Ein Promise besteht auf zwei Teilen - der Defer-Funktion und dem Promise selber.</p>
+
+<p><img src="figures/promises.png" alt="Promises1" /></p>
+
+<p>Die Defer-Funktion steuert den Status (Erfolg/Fehler). Das Promise, was von der Defer-Funktion zurückgegeben wird, reagiert auf den Status.</p>
+
+<p><img src="figures/promises2.png" alt="Promises2" /></p>
+
+<blockquote>
+  <blockquote>
+    <p>TODO</p>
+  </blockquote>
+</blockquote>
+
+<p>Nehmen wir als Beispiel ein kleines Würfelspiel. Wer eine 6 würfelt, gewinnt. Gewürfelt wir mit zwei Sekunden Verzögerung.</p>
+
+<pre><code class="language-javascript">var wuerfel = $q.defer();
+setTimeout(function() {
+  ergebnis = Random...
+  if (ergebnis == 6) {
+    wuerfel.resolve(ergebnis);
+  } else {
+    wuerfel.reject(ergebnis);
+  }
+}, 2000);
+promise = wuerfel.promise
+
+promise.then(function(zahl) {
+  alert('Erfolg: Du hast eine ' + zahl + ' gewürfelt!');
+}, function(zahl) {
+  alert('Fehler: Eine ' + zahl + ' reicht leider nicht');
+});
+</code></pre>
+
+<p><a href="http://angularjs.de/code/promises/index.html">Beispiel öffnen</a></p>
+
+<pre><code class="language-html">file: promises/index.html
+</code></pre>
+
+<pre><code class="language-javascript">file: promises/application.js
+</code></pre>
+
+<h2 id="internationalisierung">Internationalisierung (I18n und L10n) [TODO]</h2>
+
+<blockquote>
+  <p>Internationalisierung bedeutet in der Informatik beziehungsweise in der Softwareentwicklung, ein Programm so zu gestalten, dass es leicht (ohne den Quellcode ändern zu müssen) an andere Sprachen und Kulturen angepasst werden kann. <a href="http://de.wikipedia.org/wiki/Internationalisierung_(Softwareentwicklung)">Wikipedia</a></p>
+</blockquote>
+
+<blockquote>
+  <blockquote>
+    <p>TODO</p>
+  </blockquote>
+</blockquote>
+
+<h2 id="performance">Performance [TODO]</h2>
+
+<p>In diesem Kapitel geht es nicht um die absolute Performance</p>
+
+<h2 id="runtime">Updatezyklus im Browser [TODO]</h2>
+
+<h3 id="effektives-dirty-checking">Effektives Dirty-Checking</h3>
+
+<p>Um Model und View synchron zu halten, gibt es verschiedene Möglichkeiten.</p>
+
+<p>Die meisten Frameworks setzen dabei auf das Entwurfsmuster des <a href="http://de.wikipedia.org/wiki/Beobachter_(Entwurfsmuster)">Beobachters</a> (auch Observer oder publish-subscribe). Dazu werden die normalen Datentypen von JavaScript um weitere Methoden erweitert, um Veränderungen abfangen zu können.</p>
+
+<pre><code class="language-javascript">App.TodosController = Ember.ArrayController.extend({
+  addTask = function() {
+    this.pushObject(Ember.Object.create({name: this.get(newTaskName), done: false}));
+    this.set('newTaskName', '');
+  }
+});
+</code></pre>
+
+<p>Angular.js mit Dirty-Checking</p>
+
+<pre><code class="language-javascript">function TodosController($scope) {
+  $scope.todos = [];
+  $scope.addTodo = function() {
+    $scope.todos.push({name: $scope.newTodoName, done: false});
+    $scope.newTodoName = '';
+  }
+}
+</code></pre>
+
+<p>Die Zukunft:</p>
+
+<p>https://plus.google.com/111386188573471152118/posts/6peb6yffyWG</p>
+
+<h1 id="anhang">Anhang</h1>
+
+<h2 id="framework-trend">Trend-Vergleich mit anderen Frameworks</h2>
+
+<p><img src="screenshots/framework-comparison.png" alt="Vergleich Frameworks" /></p>
+
+<p><a href="http://www.google.de/trends/explore#q=angularjs%20%2B%20angular.js%2C%20emberjs%20%2B%20ember.js%2C%20backbonejs%20%2B%20backbone.js%2C%20knockoutjs%20%2B%20knockout.jsr&amp;cmpt=q">Vergleich bei Google Trends</a></p>
+
+<h2 id="entstehungsgeschichte">Entstehungsgeschichte</h2>
+
+<p>Der ursprüngliche Autor von AngularJS ist <a href="https://twitter.com/mhevery">Miško Hevery</a>. Miško hatte sich 2009 intensiv mit JavaScript beschäftigt und begann ein Framework zu schreiben, um sein Wissen zu vertiefen. Damals arbeitete er bei Google im Rahmen seines 20%-Projekt an AngularJS. Die eigentliche Idee von Miško war: Designer sollen Programme mit nur ein wenig mehr Markup schreiben können. Das anfängliche Logo sah so aus:</p>
+
+<p><img src="screenshots/angularjs-logo-2009.png" alt="angularjs-logo-2009" /></p>
+
+<p>Später arbeitete Miško für <a href="https://twitter.com/bradlygreen">Brad Green</a> an Google Feedback, wobei das Projekt zu diesem Zeitpunkt nicht besonders gut lief. Daraufhin schlug er Brad vor, das ganze Projekt mit seinem Framework neu zu schreiben - innerhalb von 2 Wochen. Er überzeugte Brad Green und schaffte es mit minimaler Verzögerung in 3 Wochen. Das Ergebnis: Der Quelltext von Google Feedback schrumpfte von 17.000 Zeilen Code auf 1.500 Zeilen.</p>
+
+<p>Das war der Zeitpunkt, wo AngularJS nicht nur für Google Feedback, sondern als allgemeines Framework interessant wurde.</p>
+
+
+
+        </div>
+      </div>
+    </div>
+
+
+
   </body>
 </html>
