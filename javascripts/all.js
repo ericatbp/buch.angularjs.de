@@ -9789,10 +9789,10 @@ if ( typeof module === "object" && module && typeof module.exports === "object" 
 
 })( window );
 /* ========================================================================
- * Bootstrap: affix.js v3.0.2
- * http://getbootstrap.com/javascript/#affix
+ * Bootstrap: affix.js v3.0.0
+ * http://twbs.github.com/bootstrap/javascript.html#affix
  * ========================================================================
- * Copyright 2013 Twitter, Inc.
+ * Copyright 2012 Twitter, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -9914,10 +9914,10 @@ if ( typeof module === "object" && module && typeof module.exports === "object" 
     })
   })
 
-}(jQuery);
+}(window.jQuery);
 /* ========================================================================
- * Bootstrap: alert.js v3.0.2
- * http://getbootstrap.com/javascript/#alerts
+ * Bootstrap: alert.js v3.0.0
+ * http://twbs.github.com/bootstrap/javascript.html#alerts
  * ========================================================================
  * Copyright 2013 Twitter, Inc.
  *
@@ -10013,10 +10013,10 @@ if ( typeof module === "object" && module && typeof module.exports === "object" 
 
   $(document).on('click.bs.alert.data-api', dismiss, Alert.prototype.close)
 
-}(jQuery);
+}(window.jQuery);
 /* ========================================================================
- * Bootstrap: button.js v3.0.2
- * http://getbootstrap.com/javascript/#buttons
+ * Bootstrap: button.js v3.0.0
+ * http://twbs.github.com/bootstrap/javascript.html#buttons
  * ========================================================================
  * Copyright 2013 Twitter, Inc.
  *
@@ -10123,12 +10123,12 @@ if ( typeof module === "object" && module && typeof module.exports === "object" 
     e.preventDefault()
   })
 
-}(jQuery);
+}(window.jQuery);
 /* ========================================================================
- * Bootstrap: carousel.js v3.0.2
- * http://getbootstrap.com/javascript/#carousel
+ * Bootstrap: carousel.js v3.0.0
+ * http://twbs.github.com/bootstrap/javascript.html#carousel
  * ========================================================================
- * Copyright 2013 Twitter, Inc.
+ * Copyright 2012 Twitter, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -10341,12 +10341,12 @@ if ( typeof module === "object" && module && typeof module.exports === "object" 
     })
   })
 
-}(jQuery);
+}(window.jQuery);
 /* ========================================================================
- * Bootstrap: collapse.js v3.0.2
- * http://getbootstrap.com/javascript/#collapse
+ * Bootstrap: collapse.js v3.0.0
+ * http://twbs.github.com/bootstrap/javascript.html#collapse
  * ========================================================================
- * Copyright 2013 Twitter, Inc.
+ * Copyright 2012 Twitter, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -10521,12 +10521,12 @@ if ( typeof module === "object" && module && typeof module.exports === "object" 
     $target.collapse(option)
   })
 
-}(jQuery);
+}(window.jQuery);
 /* ========================================================================
- * Bootstrap: dropdown.js v3.0.2
- * http://getbootstrap.com/javascript/#dropdowns
+ * Bootstrap: dropdown.js v3.0.0
+ * http://twbs.github.com/bootstrap/javascript.html#dropdowns
  * ========================================================================
- * Copyright 2013 Twitter, Inc.
+ * Copyright 2012 Twitter, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -10676,12 +10676,12 @@ if ( typeof module === "object" && module && typeof module.exports === "object" 
     .on('click.bs.dropdown.data-api'  , toggle, Dropdown.prototype.toggle)
     .on('keydown.bs.dropdown.data-api', toggle + ', [role=menu]' , Dropdown.prototype.keydown)
 
-}(jQuery);
+}(window.jQuery);
 /* ========================================================================
- * Bootstrap: tab.js v3.0.2
- * http://getbootstrap.com/javascript/#tabs
+ * Bootstrap: tab.js v3.0.0
+ * http://twbs.github.com/bootstrap/javascript.html#tabs
  * ========================================================================
- * Copyright 2013 Twitter, Inc.
+ * Copyright 2012 Twitter, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -10710,7 +10710,7 @@ if ( typeof module === "object" && module && typeof module.exports === "object" 
   Tab.prototype.show = function () {
     var $this    = this.element
     var $ul      = $this.closest('ul:not(.dropdown-menu)')
-    var selector = $this.data('target')
+    var selector = $this.attr('data-target')
 
     if (!selector) {
       selector = $this.attr('href')
@@ -10812,10 +10812,10 @@ if ( typeof module === "object" && module && typeof module.exports === "object" 
     $(this).tab('show')
   })
 
-}(jQuery);
+}(window.jQuery);
 /* ========================================================================
- * Bootstrap: transition.js v3.0.2
- * http://getbootstrap.com/javascript/#transitions
+ * Bootstrap: transition.js v3.0.0
+ * http://twbs.github.com/bootstrap/javascript.html#transitions
  * ========================================================================
  * Copyright 2013 Twitter, Inc.
  *
@@ -10869,12 +10869,12 @@ if ( typeof module === "object" && module && typeof module.exports === "object" 
     $.support.transition = transitionEnd()
   })
 
-}(jQuery);
+}(window.jQuery);
 /* ========================================================================
- * Bootstrap: scrollspy.js v3.0.2
- * http://getbootstrap.com/javascript/#scrollspy
+ * Bootstrap: scrollspy.js v3.0.0
+ * http://twbs.github.com/bootstrap/javascript.html#scrollspy
  * ========================================================================
- * Copyright 2013 Twitter, Inc.
+ * Copyright 2012 Twitter, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -11028,12 +11028,12 @@ if ( typeof module === "object" && module && typeof module.exports === "object" 
     })
   })
 
-}(jQuery);
+}(window.jQuery);
 /* ========================================================================
- * Bootstrap: modal.js v3.0.2
- * http://getbootstrap.com/javascript/#modals
+ * Bootstrap: modal.js v3.0.0
+ * http://twbs.github.com/bootstrap/javascript.html#modals
  * ========================================================================
- * Copyright 2013 Twitter, Inc.
+ * Copyright 2012 Twitter, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -11275,13 +11275,13 @@ if ( typeof module === "object" && module && typeof module.exports === "object" 
     .on('show.bs.modal',  '.modal', function () { $(document.body).addClass('modal-open') })
     .on('hidden.bs.modal', '.modal', function () { $(document.body).removeClass('modal-open') })
 
-}(jQuery);
+}(window.jQuery);
 /* ========================================================================
- * Bootstrap: tooltip.js v3.0.2
- * http://getbootstrap.com/javascript/#tooltip
+ * Bootstrap: tooltip.js v3.0.0
+ * http://twbs.github.com/bootstrap/javascript.html#tooltip
  * Inspired by the original jQuery.tipsy by Jason Frame
  * ========================================================================
- * Copyright 2013 Twitter, Inc.
+ * Copyright 2012 Twitter, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -11662,12 +11662,12 @@ if ( typeof module === "object" && module && typeof module.exports === "object" 
     return this
   }
 
-}(jQuery);
+}(window.jQuery);
 /* ========================================================================
- * Bootstrap: popover.js v3.0.2
- * http://getbootstrap.com/javascript/#popovers
+ * Bootstrap: popover.js v3.0.0
+ * http://twbs.github.com/bootstrap/javascript.html#popovers
  * ========================================================================
- * Copyright 2013 Twitter, Inc.
+ * Copyright 2012 Twitter, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -11780,7 +11780,7 @@ if ( typeof module === "object" && module && typeof module.exports === "object" 
     return this
   }
 
-}(jQuery);
+}(window.jQuery);
 
 
 
