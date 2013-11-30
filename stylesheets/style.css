@@ -3103,51 +3103,54 @@ th.visible-print, td.visible-print { display: none !important; }
 body { position: relative; /* For scrollyspy */ padding-top: 50px; /* Account for fixed navbar */ }
 
 /* line 10, /Users/sbrink/Projects/angularjs/buch.angularjs.de/source/stylesheets/style.css.scss */
+.navbar { border: none; font-size: 13px; font-weight: 300; }
+
+/* line 17, /Users/sbrink/Projects/angularjs/buch.angularjs.de/source/stylesheets/style.css.scss */
 #markdown-toc { padding-left: 0; }
-/* line 12, /Users/sbrink/Projects/angularjs/buch.angularjs.de/source/stylesheets/style.css.scss */
+/* line 19, /Users/sbrink/Projects/angularjs/buch.angularjs.de/source/stylesheets/style.css.scss */
 #markdown-toc > li { list-style-type: none; }
-/* line 13, /Users/sbrink/Projects/angularjs/buch.angularjs.de/source/stylesheets/style.css.scss */
+/* line 20, /Users/sbrink/Projects/angularjs/buch.angularjs.de/source/stylesheets/style.css.scss */
 #markdown-toc > li > a { color: #6f6f6f; text-transform: uppercase; }
 
-/* line 16, /Users/sbrink/Projects/angularjs/buch.angularjs.de/source/stylesheets/style.css.scss */
+/* line 23, /Users/sbrink/Projects/angularjs/buch.angularjs.de/source/stylesheets/style.css.scss */
 .navbar-brand { color: #ddd; }
-/* line 18, /Users/sbrink/Projects/angularjs/buch.angularjs.de/source/stylesheets/style.css.scss */
+/* line 25, /Users/sbrink/Projects/angularjs/buch.angularjs.de/source/stylesheets/style.css.scss */
 .navbar-brand em { color: #999999; font-style: normal; }
 
 /* Side navigation  Scrollspy and affixed enhanced navigation to highlight sections and secondary sections of docs content.  From bootstrap docs */
 /* First level of nav */
-/* line 32, /Users/sbrink/Projects/angularjs/buch.angularjs.de/source/stylesheets/style.css.scss */
+/* line 39, /Users/sbrink/Projects/angularjs/buch.angularjs.de/source/stylesheets/style.css.scss */
 .bs-sidenav { margin-top: 30px; margin-bottom: 30px; padding-top: 10px; padding-bottom: 10px; text-shadow: 0 1px 0 #fff; border-radius: 5px; }
 
 /* By default it's not affixed in mobile views, so undo that */
-/* line 43, /Users/sbrink/Projects/angularjs/buch.angularjs.de/source/stylesheets/style.css.scss */
+/* line 50, /Users/sbrink/Projects/angularjs/buch.angularjs.de/source/stylesheets/style.css.scss */
 .bs-sidebar.affix { position: static; }
-/* line 47, /Users/sbrink/Projects/angularjs/buch.angularjs.de/source/stylesheets/style.css.scss */
+/* line 54, /Users/sbrink/Projects/angularjs/buch.angularjs.de/source/stylesheets/style.css.scss */
 .bs-sidebar .nav li > a { font-weight: 300; display: block; color: #6f6f6f; padding: 5px 20px; }
-/* line 52, /Users/sbrink/Projects/angularjs/buch.angularjs.de/source/stylesheets/style.css.scss */
-.bs-sidebar .nav li > a :hover, .bs-sidebar .nav li > a :focus { text-decoration: none; background-color: #999999; }
 /* line 59, /Users/sbrink/Projects/angularjs/buch.angularjs.de/source/stylesheets/style.css.scss */
-.bs-sidebar .nav li.active > a, .bs-sidebar .nav li.active:hover > a, .bs-sidebar .nav li.active:focus > a { font-weight: 400; color: #008cba; background-color: transparent; }
+.bs-sidebar .nav li > a :hover, .bs-sidebar .nav li > a :focus { text-decoration: none; background-color: #999999; }
 /* line 66, /Users/sbrink/Projects/angularjs/buch.angularjs.de/source/stylesheets/style.css.scss */
+.bs-sidebar .nav li.active > a, .bs-sidebar .nav li.active:hover > a, .bs-sidebar .nav li.active:focus > a { font-weight: 400; color: #008cba; background-color: transparent; }
+/* line 73, /Users/sbrink/Projects/angularjs/buch.angularjs.de/source/stylesheets/style.css.scss */
 .bs-sidebar > .nav { /* first level */ /* second level */ }
-/* line 68, /Users/sbrink/Projects/angularjs/buch.angularjs.de/source/stylesheets/style.css.scss */
-.bs-sidebar > .nav > li > a { text-transform: uppercase; }
-/* line 72, /Users/sbrink/Projects/angularjs/buch.angularjs.de/source/stylesheets/style.css.scss */
-.bs-sidebar > .nav .nav { display: none; /* Hide by default, but at >768px, show it */ margin-bottom: 8px; }
 /* line 75, /Users/sbrink/Projects/angularjs/buch.angularjs.de/source/stylesheets/style.css.scss */
+.bs-sidebar > .nav > li > a { text-transform: uppercase; }
+/* line 79, /Users/sbrink/Projects/angularjs/buch.angularjs.de/source/stylesheets/style.css.scss */
+.bs-sidebar > .nav .nav { display: none; /* Hide by default, but at >768px, show it */ margin-bottom: 8px; }
+/* line 82, /Users/sbrink/Projects/angularjs/buch.angularjs.de/source/stylesheets/style.css.scss */
 .bs-sidebar > .nav .nav > li > a { padding-top: 3px; padding-bottom: 3px; padding-left: 30px; font-size: 90%; }
 
 /* Show and affix the side nav when space allows it */
-@media screen and (min-width: 992px) { /* line 88, /Users/sbrink/Projects/angularjs/buch.angularjs.de/source/stylesheets/style.css.scss */
+@media screen and (min-width: 992px) { /* line 95, /Users/sbrink/Projects/angularjs/buch.angularjs.de/source/stylesheets/style.css.scss */
   .bs-sidebar .nav > .active > ul { display: block; }
-  /* line 91, /Users/sbrink/Projects/angularjs/buch.angularjs.de/source/stylesheets/style.css.scss */
+  /* line 98, /Users/sbrink/Projects/angularjs/buch.angularjs.de/source/stylesheets/style.css.scss */
   .bs-sidebar.affix, .bs-sidebar.affix-bottom { width: 213px; }
-  /* line 93, /Users/sbrink/Projects/angularjs/buch.angularjs.de/source/stylesheets/style.css.scss */
+  /* line 100, /Users/sbrink/Projects/angularjs/buch.angularjs.de/source/stylesheets/style.css.scss */
   .bs-sidebar.affix .bs-sidenav, .bs-sidebar.affix-bottom .bs-sidenav { margin-top: 0; margin-bottom: 0; }
-  /* line 95, /Users/sbrink/Projects/angularjs/buch.angularjs.de/source/stylesheets/style.css.scss */
+  /* line 102, /Users/sbrink/Projects/angularjs/buch.angularjs.de/source/stylesheets/style.css.scss */
   .bs-sidebar.affix { position: fixed; /* Undo the static from mobile first approach */ top: 80px; }
-  /* line 99, /Users/sbrink/Projects/angularjs/buch.angularjs.de/source/stylesheets/style.css.scss */
+  /* line 106, /Users/sbrink/Projects/angularjs/buch.angularjs.de/source/stylesheets/style.css.scss */
   .bs-sidebar.affix-bottom { position: absolute; /* Undo the static from mobile first approach */ } }
 @media screen and (min-width: 1200px) { /* Widen the fixed sidebar again */
-  /* line 108, /Users/sbrink/Projects/angularjs/buch.angularjs.de/source/stylesheets/style.css.scss */
+  /* line 115, /Users/sbrink/Projects/angularjs/buch.angularjs.de/source/stylesheets/style.css.scss */
   .bs-sidebar.affix-bottom, .bs-sidebar.affix { width: 263px; } }
