@@ -11797,29 +11797,27 @@ if ( typeof module === "object" && module && typeof module.exports === "object" 
 
 
 
-
-
 !function ($) {
 
   $(function(){
 
-    var $window = $(window)
-    var $body   = $(document.body)
+    var $window = $(window);
+    var $body   = $(document.body);
 
-    var navHeight = $('.navbar').outerHeight(true) + 10
+    var navHeight = $('.navbar').outerHeight(true) + 10;
 
     $body.scrollspy({
       target: '.bs-sidebar',
       offset: navHeight
-    })
+    });
 
     $window.on('load', function () {
-      $body.scrollspy('refresh')
-    })
+      $body.scrollspy('refresh');
+    });
 
     $('.bs-docs-container [href=#]').click(function (e) {
-      e.preventDefault()
-    })
+      e.preventDefault();
+    });
 
     // back to top
     setTimeout(function () {
@@ -11846,5 +11844,4 @@ if ( typeof module === "object" && module && typeof module.exports === "object" 
     }, 100)
 })
 
-}(window.jQuery)
-;
+}(window.jQuery);
