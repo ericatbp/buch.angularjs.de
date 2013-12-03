@@ -193,7 +193,7 @@
 
 <p>Das Buch ist folgendermaßen gegliedert:</p>
 
-<p><img src="figures/structure.png" alt="AngularJS Aufbau" /></p>
+<p><img alt="AngularJS Aufbau" alt="" width="713" height="126" src="/images/figures/structure.png" /></p>
 
 <ol>
   <li>Grundlagen: Du bekommst einen Überblick, was AngularJS umfasst. Konzepte von AngularJS werden von uns kurz umrissen. Am Ende des Kapitels findest du die wichtigsten Komponenten grafisch dargestellt.</li>
@@ -289,7 +289,7 @@ In der Programmierung ist es ähnlich. Vergleichen wir die Schüler von gerade m
 <h2 id="databinding">Databinding - einfach/bidirektional</h2>
 <p>Im der traditionellen JavaScript-Programmierung werden Änderungen direkt im DOM von einem Event-Handler ausgeführt. Bei bidirektionalem ändert man nur das Model. Änderungen vom Model werden vom Framework in den DOM übertragen. Dies sorgt für eine klare Trennung und verständlicheren Code.</p>
 
-<p><img src="figures/binding-types.png" alt="AngularJS Binding im Vergleich" /></p>
+<p><img alt="AngularJS Binding im Vergleich" alt="" width="521" height="166" src="/images/figures/binding-types.png" /></p>
 
 <h3 id="einfaches-databinding-one-way">Einfaches Databinding (One-Way)</h3>
 <p>Die meisten Entwickler aus der klassischen Webentwicklung werden mit dem einfachen Databinding bestens vertraut sein. Es gibt ein Model, welches die Daten bereitstellt und ein Template, welches das Aussehen liefert. Diese werden verschmolzen und als View an den Benutzer geschickt.</p>
@@ -301,13 +301,13 @@ In der Programmierung ist es ähnlich. Vergleichen wir die Schüler von gerade m
 
 <p>Der Vorteil dürfte offensichtlich sein. Die manuelle Synchronisation fällt weg und damit auch eine Menge Arbeit und fehleranfälliger Code.</p>
 
-<p><img src="figures/data-binding.png" alt="AngularJS Data Binding" /></p>
+<p><img alt="AngularJS Data Binding" alt="" width="568" height="301" src="/images/figures/data-binding.png" /></p>
 
 <h2 id="ueberblick">Überblick der wichtigsten Komponenten</h2>
 
 <p>Wie in der Einführung angekündigt, gibt es zum Abschluss der Übersicht eine grafische Darstellung aller Komponenten, die AngularJS beinhaltet. Drucke die Übersicht aus und hake ab, was du zu 80% verstanden hast. <a href="figures/angularjs-overview.pdf">Druckversion als PDF herunterladen</a></p>
 
-<p><img src="figures/angularjs-overview.png" alt="AngularJS Überblick" /></p>
+<p><img alt="AngularJS Überblick" alt="" width="693" height="469" src="/images/figures/angularjs-overview.png" /></p>
 
 <h1 id="basisapplikation">3. Basisapplikation</h1>
 
@@ -336,7 +336,7 @@ In der Programmierung ist es ähnlich. Vergleichen wir die Schüler von gerade m
 
 <p>Mit <code>ng-app</code> startet die Magie von AngularJS. Intern wartet AngularJS bis der DOM geladen ist und sucht dann nach dem Attribut <code>ng-app</code>. Dabei kann es an jeder beliebigen Stelle stehen und muss sich nicht im Tag <code>&lt;html&gt;</code> befinden. Statt einer Main-Methode, sorgt <code>ng-app</code> für die Initialisierung.</p>
 
-<p><img src="figures/scope-root.png" alt="AngularJS - Root Scope" /></p>
+<p><img alt="AngularJS - Root Scope" alt="" width="516" height="268" src="/images/figures/scope-root.png" /></p>
 
 <p>Zusammen mit der Initialisierung wird etwas erzeugt, was sich Scope nennt. In unserem Fall das erste Scope und somit <code>$rootScope</code> genannt. Scopes dienen als Vermittlungsschicht zwischen View und Controller. Wenn Variablen auf dem Scope erzeugt/verändert werden, wird dies den Elementen auf dem View des Scopes mitgeteilt. An dieser Stelle siehst du, was bidirektionales Databinding konkret bedeutet.</p>
 
@@ -366,11 +366,11 @@ In der Programmierung ist es ähnlich. Vergleichen wir die Schüler von gerade m
 
 <p>Ein Controller in AngularJS ist nichts weiter als eine normale Funktion. Eine Besonderheit ist nur die übergebene Variable <code>$scope</code>. Mit dieser Variable können wir Daten mit dem View austauschen. Dieser Controller macht nichts weiter, als auf dem Scope <code>name</code> den Wert <em>AngularJS</em> hinzuzufügen.</p>
 
-<p><img src="figures/scope-controller.png" alt="AngularJS - Controller Scope" /></p>
+<p><img alt="AngularJS - Controller Scope" alt="" width="521" height="268" src="/images/figures/scope-controller.png" /></p>
 
 <p>Wie man sieht, existieren jetzt zwei Scopes. Das <code>$rootScope</code>, definiert durch <code>ng-app</code> und ein neues Scope, definiert durch <code>ng-controller</code>.</p>
 
-<p><img src="figures/scopes.png" alt="AngularJS - Root Scope" /></p>
+<p><img alt="AngularJS - Root Scope" alt="" width="635" height="181" src="/images/figures/scopes.png" /></p>
 
 <p>Das Bild oberhalb verdeutlicht noch einmal die Kommunikation zwischen Variablen und Scopes. Das Scope ist die Verbindung zwischen View und Controller. Wird eine Variable auf dem Scope geändert, werden alle Elemente im View davon benachrichtigt und der entsprechende Wert geändert.</p>
 
@@ -668,7 +668,7 @@ Somit sind jQuery und die <em>boostrap.js</em> eine unbedingte Voraussetzung. Di
 
 <p>Der Injektor kann nicht nur Instanzen zu erzeugen, sondern kümmert sich auch darum, diese in die richtige Reihenfolge zu setzen. Nehmen wir ein Beispiel mit untereinander abhängigen Services:</p>
 
-<p><img src="figures/angularjs-injector.png" alt="AngularJS - Injektor" /></p>
+<p><img alt="AngularJS - Injektor" alt="" width="270" height="198" src="/images/figures/angularjs-injector.png" /></p>
 
 <p>Als Pseudo-JavaScript würden wir die Servies folgendermaßen erzeugen:</p>
 
@@ -718,7 +718,7 @@ app.factory('Database', function(DBUsername, DBPassword) { ... });
 
 <p>Constant macht dabei genau das, was der Name vermuten lässt - eine Konstante definieren. Die restlichen vier Methoden sind dynamisch und bauen aufeinander auf (siehe Abbildung). Provider steht dabei ganz oben und bietet die meisten Möglichkeiten an. Die restlichen Methoden bieten ein vereinfachtes Interface für häufig genutzte Anwendungsfälle. Wir gehen im Folgenden auf die Unterschiede und Einsatzmöglichkeiten ein.</p>
 
-<p><img src="figures/services.png" alt="AngularJS - Root Scope" /></p>
+<p><img alt="AngularJS - Root Scope" alt="" width="229" height="216" src="/images/figures/services.png" /></p>
 
 <h3 id="provider">Provider</h3>
 
@@ -1050,11 +1050,11 @@ aufruf1(function(ergebnis1) {
 
 <p>Ein Promise besteht auf zwei Teilen - der Defer-Funktion und dem Promise selber.</p>
 
-<p><img src="figures/promises.png" alt="Promises1" /></p>
+<p><img alt="Promises1" alt="" width="632" height="204" src="/images/figures/promises.png" /></p>
 
 <p>Die Defer-Funktion steuert den Status (Erfolg/Fehler). Das Promise, was von der Defer-Funktion zurückgegeben wird, reagiert auf den Status.</p>
 
-<p><img src="figures/promises2.png" alt="Promises2" /></p>
+<p><img alt="Promises2" alt="" width="545" height="246" src="/images/figures/promises2.png" /></p>
 
 <blockquote>
   <blockquote>
@@ -1141,7 +1141,7 @@ promise.then(function(zahl) {
 
 <h2 id="framework-trend">Trend-Vergleich mit anderen Frameworks</h2>
 
-<p><img src="screenshots/framework-comparison.png" alt="Vergleich Frameworks" /></p>
+<p><img alt="Vergleich Frameworks" alt="" src="/images/screenshots/framework-comparison.png" /></p>
 
 <p><a href="http://www.google.de/trends/explore#q=angularjs%20%2B%20angular.js%2C%20emberjs%20%2B%20ember.js%2C%20backbonejs%20%2B%20backbone.js%2C%20knockoutjs%20%2B%20knockout.jsr&amp;cmpt=q">Vergleich bei Google Trends</a></p>
 
@@ -1149,12 +1149,11 @@ promise.then(function(zahl) {
 
 <p>Der ursprüngliche Autor von AngularJS ist <a href="https://twitter.com/mhevery">Miško Hevery</a>. Miško hatte sich 2009 intensiv mit JavaScript beschäftigt und begann ein Framework zu schreiben, um sein Wissen zu vertiefen. Damals arbeitete er bei Google im Rahmen seines 20%-Projekt an AngularJS. Die eigentliche Idee von Miško war: Designer sollen Programme mit nur ein wenig mehr Markup schreiben können. Das anfängliche Logo sah so aus:</p>
 
-<p><img src="screenshots/angularjs-logo-2009.png" alt="angularjs-logo-2009" /></p>
+<p><img alt="angularjs-logo-2009" alt="" src="/images/screenshots/angularjs-logo-2009.png" /></p>
 
 <p>Später arbeitete Miško für <a href="https://twitter.com/bradlygreen">Brad Green</a> an Google Feedback, wobei das Projekt zu diesem Zeitpunkt nicht besonders gut lief. Daraufhin schlug er Brad vor, das ganze Projekt mit seinem Framework neu zu schreiben - innerhalb von 2 Wochen. Er überzeugte Brad Green und schaffte es mit minimaler Verzögerung in 3 Wochen. Das Ergebnis: Der Quelltext von Google Feedback schrumpfte von 17.000 Zeilen Code auf 1.500 Zeilen.</p>
 
 <p>Das war der Zeitpunkt, wo AngularJS nicht nur für Google Feedback, sondern als allgemeines Framework interessant wurde.</p>
-
 
 
       </div>
