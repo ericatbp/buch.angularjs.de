@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
   <title>Online-Buch / Tutorial</title>
-  <link href="/stylesheets/style-d2f7a2dc.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/stylesheets/style-4f72cf9d.css" media="screen" rel="stylesheet" type="text/css" />
   <meta name="robots" content="noindex" />
 </head>
 <body>
@@ -15,6 +15,7 @@
     <a class="navbar-brand" href="/">Angular<em>JS</em> Buch</a>
 
     <ul class="nav navbar-nav navbar-right">
+      <li><a href="http://angularjs.de/impressum" target="_blank">Impressum</a></li>
       <li><a href="https://github.com/sbrink/buch.angularjs.de" target="_blank">Source Code</a></li>
       <li><a href="http://angularjs.de" target="_blank">Angularjs.DE →</a></li>
     </ul>
@@ -325,8 +326,20 @@ In der Programmierung ist es ähnlich. Vergleichen wir die Schüler von gerade m
 
 <p>Bevor wir mit der eigentlich Applikation durchstarten, schauen wir uns das Grundgerüst einer Applikation mit AngularJS an. Das Beispiel dazu kannst du <a href="http://jsfiddle.net/angularjs_de/TeAGF/">online</a> ausprobieren oder lokal speichern. Wenn du es lokal abspeichern möchtest, erstelle ein neues Verzeichnis mit beliebigem Namen und eine Datei <code>index.html</code>, in der du den folgenden Quellcode abspeicherst. Rufe die Datei danach im Browser auf. <a href="http://jsfiddle.net/angularjs_de/TeAGF/">Online-Version »</a></p>
 
-<pre><code class="language-html">file: ng-app/index.html
-</code></pre>
+<div><div class="CodeRay">
+  <div class="code"><pre><span class="tag">&lt;html</span> <span class="attribute-name">ng-app</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;head&gt;</span>
+    <span class="tag">&lt;script</span> <span class="attribute-name">src</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">https://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="tag">&lt;/script&gt;</span>
+  <span class="tag">&lt;/head&gt;</span>
+  <span class="tag">&lt;body&gt;</span>
+    <span class="tag">&lt;label&gt;</span>Bitte gib Deinen Namen ein:<span class="tag">&lt;/label&gt;</span>
+    <span class="tag">&lt;input</span> <span class="attribute-name">type</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">text</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">ng-model</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">name</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+    <span class="tag">&lt;hr&gt;</span>
+    <span class="tag">&lt;strong&gt;</span>Hallo {{name}}!<span class="tag">&lt;/strong&gt;</span>
+  <span class="tag">&lt;/body&gt;</span>
+<span class="tag">&lt;/html&gt;</span></pre></div>
+</div>
+</div>
 
 <p>Wenn du die Datei im Browser aufrufst, wirst du feststellen, dass jede Textänderung im Eingabefeld eine sofortige Veränderung in der Ausgabe bewirkt.</p>
 
@@ -356,13 +369,30 @@ In der Programmierung ist es ähnlich. Vergleichen wir die Schüler von gerade m
 
 <p>Applikationen, die nur in einer einzigen HTML-Datei bestehen, sind nicht sonderlich spannend. Wir erweitern unsere Applikation um einen JavaScript-Teil und fügen eine Datei <code>application.js</code> hinzu.</p>
 
-<pre><code class="language-html">file: ng-controller/index.html
-</code></pre>
+<div><div class="CodeRay">
+  <div class="code"><pre><span class="tag">&lt;html</span> <span class="attribute-name">ng-app</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;head&gt;</span>
+    <span class="tag">&lt;script</span> <span class="attribute-name">src</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">https://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="tag">&lt;/script&gt;</span>
+    <span class="tag">&lt;script</span> <span class="attribute-name">src</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">application.js</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="tag">&lt;/script&gt;</span>
+  <span class="tag">&lt;/head&gt;</span>
+  <span class="tag">&lt;body</span> <span class="attribute-name">ng-controller</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">MainController</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+    <span class="tag">&lt;label&gt;</span>Bitte gib Deinen Namen ein:<span class="tag">&lt;/label&gt;</span>
+    <span class="tag">&lt;input</span> <span class="attribute-name">type</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">text</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">ng-model</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">name</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+    <span class="tag">&lt;hr&gt;</span>
+    <span class="tag">&lt;strong&gt;</span>Hallo {{name}}!<span class="tag">&lt;/strong&gt;</span>
+  <span class="tag">&lt;/body&gt;</span>
+<span class="tag">&lt;/html&gt;</span></pre></div>
+</div>
+</div>
 
 <p>An dieser Stelle wird <code>ng-controller</code> als neue Direktive hinzugekommen. Wie der Name es vermuten lässt, wird an dieser Stelle ein neuer Controller eingebunden. Damit einher geht auch die Erzeugung eines neuen Scopes. Die Abbildung unten verdeutlicht die entstandene Verschachtelung der Scopes.</p>
 
-<pre><code class="language-javascript">file: ng-controller/application.js
-</code></pre>
+<div><div class="CodeRay">
+  <div class="code"><pre><span class="keyword">function</span> <span class="function">MainController</span>(<span class="predefined">$scope</span>) {
+  <span class="predefined">$scope</span>.name = <span class="string"><span class="delimiter">'</span><span class="content">AngularJS</span><span class="delimiter">'</span></span>;
+}</pre></div>
+</div>
+</div>
 
 <p>Ein Controller in AngularJS ist nichts weiter als eine normale Funktion. Eine Besonderheit ist nur die übergebene Variable <code>$scope</code>. Mit dieser Variable können wir Daten mit dem View austauschen. Dieser Controller macht nichts weiter, als auf dem Scope <code>name</code> den Wert <em>AngularJS</em> hinzuzufügen.</p>
 
@@ -382,19 +412,45 @@ In der Programmierung ist es ähnlich. Vergleichen wir die Schüler von gerade m
 
 <p>In echten Applikationen haben wir nicht nur einzelne Werte, sondern strukturierte Daten, häufig in Form von Listen - und Listen sind eine Stärke von AngularJS.</p>
 
-<pre><code class="language-javascript">file: ng-repeat/application.js
-</code></pre>
+<div><div class="CodeRay">
+  <div class="code"><pre><span class="keyword">function</span> <span class="function">MainController</span>(<span class="predefined">$scope</span>) {
+  <span class="predefined">$scope</span>.frameworks = [
+    { <span class="key">name</span>: <span class="string"><span class="delimiter">'</span><span class="content">AngularJS</span><span class="delimiter">'</span></span>,   <span class="key">url</span>: <span class="string"><span class="delimiter">'</span><span class="content">angularjs.org</span><span class="delimiter">'</span></span> },
+    { <span class="key">name</span>: <span class="string"><span class="delimiter">'</span><span class="content">Ember.js</span><span class="delimiter">'</span></span>,    <span class="key">url</span>: <span class="string"><span class="delimiter">'</span><span class="content">emberjs.com</span><span class="delimiter">'</span></span> },
+    { <span class="key">name</span>: <span class="string"><span class="delimiter">'</span><span class="content">Backbone.js</span><span class="delimiter">'</span></span>, <span class="key">url</span>: <span class="string"><span class="delimiter">'</span><span class="content">backbonejs.org</span><span class="delimiter">'</span></span> }
+  ];
+}</pre></div>
+</div>
+</div>
 
 <p>Wir ändern in diesem Beispiel unseren Controller und stellen ein Array mit Frameworks zusammen, welches Name und URL enthält. An dieser Stelle erkennt man, wie einfach die Arbeit mit AngularJS im Vergleich zu anderen Frameworks ist. Wir benutzen für eine Liste ein einfaches JavaScript-Objekt (<a href="http://de.wikipedia.org/wiki/Plain_Old_Java_Object">POJO</a>), statt von Klassen des Frameworks zu erben. Die Darstellung dieser Liste im View ist ähnlich einfach:</p>
 
-<pre><code class="language-html">file: ng-repeat/index.html
-</code></pre>
+<div><div class="CodeRay">
+  <div class="code"><pre><span class="tag">&lt;html</span> <span class="attribute-name">ng-app</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;head&gt;</span>
+    <span class="tag">&lt;script</span> <span class="attribute-name">src</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">https://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="tag">&lt;/script&gt;</span>
+    <span class="tag">&lt;script</span> <span class="attribute-name">src</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">application.js</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="tag">&lt;/script&gt;</span>
+  <span class="tag">&lt;/head&gt;</span>
+  <span class="tag">&lt;body</span> <span class="attribute-name">ng-controller</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">MainController</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+    <span class="tag">&lt;ul&gt;</span>
+      <span class="tag">&lt;li</span> <span class="attribute-name">ng-repeat</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">framework in frameworks</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+        {{framework.name}} - http://{{framework.url}}
+      <span class="tag">&lt;/li&gt;</span>
+    <span class="tag">&lt;/ul&gt;</span>
+  <span class="tag">&lt;/body&gt;</span>
+<span class="tag">&lt;/html&gt;</span></pre></div>
+</div>
+</div>
+
 <p>In AngularJS wird die Anweisung, etwas zu wiederholen, direkt in den Tag geschrieben, der wiederholt werden soll: <code>&lt;li ng-repeat="framework in frameworks"&gt;</code>. Wie für einen Controller, wird für jedes einzelne Listenelement ein Scope erzeugt. Deshalb können wir innerhalt des <code>&lt;li&gt;</code>-Elements auf <em>name</em> und <em>url</em> zuzugreifen.</p>
 
 <p>Die Zuweisung für das erste Listenelement würde intern so aussehen:</p>
 
-<pre><code class="language-javascript">$scope.framework = { name: 'AngularJS', url: 'angularjs.org' }
-</code></pre>
+<div><div class="CodeRay">
+  <div class="code"><pre><span class="predefined">$scope</span>.framework = { <span class="key">name</span>: <span class="string"><span class="delimiter">'</span><span class="content">AngularJS</span><span class="delimiter">'</span></span>, <span class="key">url</span>: <span class="string"><span class="delimiter">'</span><span class="content">angularjs.org</span><span class="delimiter">'</span></span> }
+</pre></div>
+</div>
+</div>
 
 <p>Arrays können natürlich über mehrere Ebenen zu verschachtelt werden, um somit z.B. hierarchische Menüs darzustellen.</p>
 
@@ -415,11 +471,34 @@ In der Programmierung ist es ähnlich. Vergleichen wir die Schüler von gerade m
   <p><code>&lt;a href&gt;&lt;/a&gt;</code> AngularJS fügt bei einem leeren href automatisch ein e.preventDefault() ein.</p>
 </blockquote>
 
-<pre><code class="language-html">file: ng-click/index.html
-</code></pre>
+<div><div class="CodeRay">
+  <div class="code"><pre><span class="tag">&lt;html</span> <span class="attribute-name">ng-app</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;head&gt;</span>
+    <span class="tag">&lt;script</span> <span class="attribute-name">src</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">https://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="tag">&lt;/script&gt;</span>
+    <span class="tag">&lt;script</span> <span class="attribute-name">src</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">application.js</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="tag">&lt;/script&gt;</span>
+  <span class="tag">&lt;/head&gt;</span>
+  <span class="tag">&lt;body</span> <span class="attribute-name">ng-controller</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">MainController</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+    <span class="tag">&lt;ul&gt;</span>
+      <span class="tag">&lt;li</span> <span class="attribute-name">ng-repeat</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">framework in frameworks</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>{{framework}}<span class="tag">&lt;/li&gt;</span>
+    <span class="tag">&lt;/ul&gt;</span>
+    <span class="tag">&lt;input</span> <span class="attribute-name">type</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">text</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">ng-model</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">newFramework</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+    <span class="tag">&lt;button</span> <span class="attribute-name">ng-click</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">addFramework()</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>Hinzufügen<span class="tag">&lt;/button&gt;</span>
+  <span class="tag">&lt;/body&gt;</span>
+<span class="tag">&lt;/html&gt;</span></pre></div>
+</div>
+</div>
 
-<pre><code class="language-javascript">file: ng-click/application.js
-</code></pre>
+<div><div class="CodeRay">
+  <div class="code"><pre><span class="keyword">function</span> <span class="function">MainController</span>(<span class="predefined">$scope</span>) {
+  <span class="predefined">$scope</span>.frameworks = [<span class="string"><span class="delimiter">'</span><span class="content">AngularJS</span><span class="delimiter">'</span></span>, <span class="string"><span class="delimiter">'</span><span class="content">Ember.js</span><span class="delimiter">'</span></span>, <span class="string"><span class="delimiter">'</span><span class="content">Backbone.js</span><span class="delimiter">'</span></span>];
+
+  <span class="predefined">$scope</span>.<span class="function">addFramework</span> = <span class="keyword">function</span>() {
+    <span class="predefined">$scope</span>.frameworks.push(<span class="predefined">$scope</span>.newFramework);
+    <span class="predefined">$scope</span>.newFramework = <span class="string"><span class="delimiter">'</span><span class="delimiter">'</span></span>;
+  }
+}</pre></div>
+</div>
+</div>
 
 <h2 id="input">Input…</h2>
 <p><strong>API</strong>:
@@ -460,20 +539,128 @@ ngSwitch
 ngTransclude
 ngView</p>
 
-<pre><code class="language-html">file: shop/index.html
-</code></pre>
+<div><div class="CodeRay">
+  <div class="code"><pre><span class="tag">&lt;html</span> <span class="attribute-name">ng-app</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">Shop</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+<span class="tag">&lt;head&gt;</span>
+  <span class="tag">&lt;meta</span> <span class="attribute-name">charset</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">utf8</span><span class="delimiter">&quot;</span></span> <span class="tag">/&gt;</span>
+  <span class="tag">&lt;title&gt;</span>Ecommerce<span class="tag">&lt;/title&gt;</span>
+  <span class="tag">&lt;link</span> <span class="attribute-name">rel</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">stylesheet</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">href</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+  <span class="tag">&lt;script</span> <span class="attribute-name">src</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="tag">&lt;/script&gt;</span>
+  <span class="tag">&lt;script</span> <span class="attribute-name">src</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">application.js</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="tag">&lt;/script&gt;</span>
+<span class="tag">&lt;/head&gt;</span>
+<span class="tag">&lt;body&gt;</span>
+  <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">container</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
 
-<pre><code class="language-html">file: shop/about.html
-</code></pre>
+    <span class="tag">&lt;nav</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">navbar navbar-default</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">role</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">navigation</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+      <span class="tag">&lt;a</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">navbar-brand</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">href</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">#</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>Shop<span class="tag">&lt;/a&gt;</span>
+      <span class="tag">&lt;ul</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">nav navbar-nav</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+        <span class="tag">&lt;li&gt;</span><span class="tag">&lt;a</span> <span class="attribute-name">ng-href</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">#/</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>Startseite<span class="tag">&lt;/a&gt;</span><span class="tag">&lt;/li&gt;</span>
+        <span class="tag">&lt;li&gt;</span><span class="tag">&lt;a</span> <span class="attribute-name">ng-href</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">#/about</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>Über<span class="tag">&lt;/a&gt;</span><span class="tag">&lt;/li&gt;</span>
+      <span class="tag">&lt;/ul&gt;</span>
+    <span class="tag">&lt;/nav&gt;</span>
 
-<pre><code class="language-html">file: shop/articles.html
-</code></pre>
+    <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">row</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+      <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">col-sm-8</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">ng-view</span><span class="tag">&gt;</span>Inhalt<span class="tag">&lt;/div&gt;</span>
+      <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">col-sm-4</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">ng-include</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">'cart.html'</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>Warenkorb<span class="tag">&lt;/div&gt;</span>
+    <span class="tag">&lt;/div&gt;</span>
 
-<pre><code class="language-html">file: shop/cart.html
-</code></pre>
+  <span class="tag">&lt;/div&gt;</span>
+<span class="tag">&lt;/body&gt;</span>
+<span class="tag">&lt;/html&gt;</span></pre></div>
+</div>
+</div>
 
-<pre><code class="language-javascript">file: shop/application.js
-</code></pre>
+<div><div class="CodeRay">
+  <div class="code"><pre><span class="tag">&lt;h2&gt;</span>Über uns<span class="tag">&lt;/h2&gt;</span>
+
+Im Geschäft seit 3001</pre></div>
+</div>
+</div>
+
+<div><div class="CodeRay">
+  <div class="code"><pre><span class="tag">&lt;h2&gt;</span>Unsere Auswahl<span class="tag">&lt;/h2&gt;</span>
+<span class="tag">&lt;form&gt;</span>
+  <span class="tag">&lt;input</span> <span class="attribute-name">type</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">text</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">ng-model</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">search.name</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">placeholder</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">Suche</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">form-control</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+<span class="tag">&lt;/form&gt;</span>
+
+<span class="tag">&lt;table</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">table</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+  <span class="tag">&lt;tr</span> <span class="attribute-name">ng-repeat</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">article in articles | filter:search</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+    <span class="tag">&lt;td&gt;</span>{{article.id}}<span class="tag">&lt;/td&gt;</span>
+    <span class="tag">&lt;td&gt;</span>{{article.name}}<span class="tag">&lt;/td&gt;</span>
+    <span class="tag">&lt;td&gt;</span>{{article.price | currency}}<span class="tag">&lt;/td&gt;</span>
+    <span class="tag">&lt;td&gt;</span><span class="tag">&lt;a</span> <span class="attribute-name">href</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">btn btn-default btn-sm</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">ng-click</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">cart.addArticle(article);</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>Hinzufügen<span class="tag">&lt;/a&gt;</span><span class="tag">&lt;/td&gt;</span>
+  <span class="tag">&lt;/tr&gt;</span>
+<span class="tag">&lt;/table&gt;</span></pre></div>
+</div>
+</div>
+
+<div><div class="CodeRay">
+  <div class="code"><pre><span class="tag">&lt;div</span> <span class="attribute-name">ng-controller</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">CartsController</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+  <span class="tag">&lt;h3&gt;</span>Warenkorb<span class="tag">&lt;/h3&gt;</span>
+  <span class="tag">&lt;div</span> <span class="attribute-name">ng-hide</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">cart.items.length</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">alert alert-notice</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>Ihr Warenkorb ist noch leer.<span class="tag">&lt;/div&gt;</span>
+  <span class="tag">&lt;table</span> <span class="attribute-name">ng-show</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">cart.items.length</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">table</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+    <span class="tag">&lt;tr</span> <span class="attribute-name">ng-repeat</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">item in cart.items</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+      <span class="tag">&lt;td&gt;</span>{{item.name}}<span class="tag">&lt;/td&gt;</span>
+      <span class="tag">&lt;td&gt;</span>{{item.price | currency}}<span class="tag">&lt;/td&gt;</span>
+      <span class="tag">&lt;td&gt;</span>
+        <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">btn-group</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+          <span class="tag">&lt;a</span> <span class="attribute-name">href</span> <span class="attribute-name">ng-click</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">cart.copyItem(item)</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">btn btn-success btn-sm</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>+<span class="tag">&lt;/a&gt;</span>
+          <span class="tag">&lt;a</span> <span class="attribute-name">href</span> <span class="attribute-name">ng-click</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">cart.removeItem(item)</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">btn btn-danger btn-sm</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>-<span class="tag">&lt;/a&gt;</span>
+        <span class="tag">&lt;/div&gt;</span>
+      <span class="tag">&lt;/td&gt;</span>
+    <span class="tag">&lt;/tr&gt;</span>
+    <span class="tag">&lt;tr&gt;</span>
+      <span class="tag">&lt;td&gt;</span>{{cart.items.length}} Artikel<span class="tag">&lt;/td&gt;</span>
+      <span class="tag">&lt;td&gt;</span>{{cart.sum() | currency }}<span class="tag">&lt;/td&gt;</span>
+      <span class="tag">&lt;td&gt;</span><span class="tag">&lt;/td&gt;</span>
+    <span class="tag">&lt;/tr&gt;</span>
+  <span class="tag">&lt;/table&gt;</span>
+<span class="tag">&lt;/div&gt;</span></pre></div>
+</div>
+</div>
+
+<div><div class="CodeRay">
+  <div class="code"><pre>shop = angular.module(<span class="string"><span class="delimiter">&quot;</span><span class="content">Shop</span><span class="delimiter">&quot;</span></span>, []);
+
+shop.config(<span class="keyword">function</span>(<span class="predefined">$routeProvider</span>) {
+  <span class="predefined">$routeProvider</span>.
+    when(<span class="string"><span class="delimiter">'</span><span class="content">/</span><span class="delimiter">'</span></span>, { <span class="key">templateUrl</span>: <span class="string"><span class="delimiter">'</span><span class="content">articles.html</span><span class="delimiter">'</span></span>, <span class="key">controller</span>: ArticlesController }).
+    when(<span class="string"><span class="delimiter">'</span><span class="content">/about</span><span class="delimiter">'</span></span>, { <span class="key">templateUrl</span>: <span class="string"><span class="delimiter">'</span><span class="content">about.html</span><span class="delimiter">'</span></span> }).
+    otherwise({ <span class="key">redirectTo</span>: <span class="string"><span class="delimiter">'</span><span class="content">/</span><span class="delimiter">'</span></span>});
+});
+
+shop.factory(<span class="string"><span class="delimiter">'</span><span class="content">Cart</span><span class="delimiter">'</span></span>, <span class="keyword">function</span>() {
+  <span class="keyword">var</span> items = [];
+
+  <span class="keyword">return</span> {
+    <span class="key">items</span>: items,
+    <span class="function">addArticle</span>: <span class="keyword">function</span>(article) {
+      items.push(article);
+    },
+    <span class="function">copyItem</span>: <span class="keyword">function</span>(item) {
+      <span class="keyword">return</span> items.splice(items.indexOf(item), <span class="integer">0</span>, item);
+    },
+    <span class="function">removeItem</span>: <span class="keyword">function</span>(item) {
+      <span class="keyword">return</span> items.splice(items.indexOf(item),<span class="integer">1</span>);
+    },
+    <span class="function">sum</span>: <span class="keyword">function</span>() {
+      <span class="keyword">return</span> items.reduce(<span class="keyword">function</span>(total, article) { <span class="keyword">return</span> total + article.price; }, <span class="integer">0</span>);
+    }
+  };
+});
+
+<span class="keyword">function</span> <span class="function">CartsController</span>(<span class="predefined">$scope</span>, Cart) {
+  <span class="predefined">$scope</span>.cart = Cart;
+}
+
+<span class="keyword">function</span> <span class="function">ArticlesController</span>(<span class="predefined">$scope</span>, <span class="predefined">$http</span>, Cart) {
+  <span class="predefined">$scope</span>.cart = Cart;
+  <span class="predefined">$http</span>.get(<span class="string"><span class="delimiter">'</span><span class="content">articles.json</span><span class="delimiter">'</span></span>).then(<span class="keyword">function</span>(articlesResponse) {
+    <span class="predefined">$scope</span>.articles = articlesResponse.data;
+  });
+}</pre></div>
+</div>
+</div>
 
 <h2 id="die-mglichkeiten-von-">Die Möglichkeiten von {{…}}</h2>
 
@@ -647,11 +834,14 @@ Somit sind jQuery und die <em>boostrap.js</em> eine unbedingte Voraussetzung. Di
 
 <p>Klassisch kümmert sich eine Funktion selber um das instanziieren von weiteren Objekten. Gucken wir uns folgende Funktion an:</p>
 
-<pre><code class="language-javascript">function findUser(user){
-  var db = new Database(...);
-  db.find('users', user);
+<div><div class="CodeRay">
+  <div class="code"><pre><span class="keyword">function</span> <span class="function">findUser</span>(user){
+  <span class="keyword">var</span> db = <span class="keyword">new</span> Database(...);
+  db.find(<span class="string"><span class="delimiter">'</span><span class="content">users</span><span class="delimiter">'</span></span>, user);
 }
-</code></pre>
+</pre></div>
+</div>
+</div>
 
 <p>Die Funtkion <code>findUser</code> sucht einen Benutzer aus einer Datebank-Tabelle heraus. Dazu muss eine Verbindung zu einer Datenbank hergestellt werden. <code>findUser</code> kümmert sich selber darum, das ensprechende Objekt <code>Database</code> zu instanziieren. Die Kontrolle, Objekte zu erstellen liegt somit bei der Funktion selbst.</p>
 
@@ -659,10 +849,13 @@ Somit sind jQuery und die <em>boostrap.js</em> eine unbedingte Voraussetzung. Di
 
 <p>Mit <em>Dependency Injection</em> wird die Kontrolle über das Instanziieren der Funktion entzogen. Die Kontrolle hat jetzt eine zentrale Stelle, die diese Arbeit erledigt. Diese zentrale Stelle nennen wir Injektor. Die Funktion muss nicht wissen, woher <code>db</code> kommt und wie <code>db</code> instanziiert wird. Wir könnten also Folgendes schreiben:</p>
 
-<pre><code class="language-javascript">function findUser(db){
-  db.find('users', user);
+<div><div class="CodeRay">
+  <div class="code"><pre><span class="keyword">function</span> <span class="function">findUser</span>(db){
+  db.find(<span class="string"><span class="delimiter">'</span><span class="content">users</span><span class="delimiter">'</span></span>, user);
 }
-</code></pre>
+</pre></div>
+</div>
+</div>
 
 <h3 id="der-injektion-und-die-richtige-reihenfolge">Der Injektion und die richtige Reihenfolge</h3>
 
@@ -672,13 +865,16 @@ Somit sind jQuery und die <em>boostrap.js</em> eine unbedingte Voraussetzung. Di
 
 <p>Als Pseudo-JavaScript würden wir die Servies folgendermaßen erzeugen:</p>
 
-<pre><code class="language-javascript">service 'S1', function(S2, S5, S6)
-service 'S2', function(S3, S4, S5)
-service 'S3', function(S6)
-service 'S4', function(S3, S5)
-service 'S5', function()
-service 'S6', function()
-</code></pre>
+<div><div class="CodeRay">
+  <div class="code"><pre>service <span class="string"><span class="delimiter">'</span><span class="content">S1</span><span class="delimiter">'</span></span>, <span class="keyword">function</span>(S2, S5, S6)
+service <span class="string"><span class="delimiter">'</span><span class="content">S2</span><span class="delimiter">'</span></span>, <span class="keyword">function</span>(S3, S4, S5)
+service <span class="string"><span class="delimiter">'</span><span class="content">S3</span><span class="delimiter">'</span></span>, <span class="keyword">function</span>(S6)
+service <span class="string"><span class="delimiter">'</span><span class="content">S4</span><span class="delimiter">'</span></span>, <span class="keyword">function</span>(S3, S5)
+service <span class="string"><span class="delimiter">'</span><span class="content">S5</span><span class="delimiter">'</span></span>, <span class="keyword">function</span>()
+service <span class="string"><span class="delimiter">'</span><span class="content">S6</span><span class="delimiter">'</span></span>, <span class="keyword">function</span>()
+</pre></div>
+</div>
+</div>
 
 <p>Der Injektor von AngularJS löst den Baum von Abhängigkeiten korrekt auf und sorgt für die richtige Reihenfolge beim Instanziieren: <code>S6</code>, <code>S3</code>, <code>S5</code>, <code>S4</code>, <code>S2</code>, <code>S1</code>.</p>
 
@@ -695,10 +891,13 @@ service 'S6', function()
 
 <p>Der Injektor von AngularJS erkennt die benutzten Services anhand der Parameternamen. Im Folgenden werden Database <code>DBUsername</code> und <code>DBPassword</code> übergeben. Der Injektor sucht dementsprechend nach Services mit den Namen <code>DBUsername</code> und <code>DBPassword</code>.</p>
 
-<pre><code class="language-javascript">app.value('DBUsername', 'root');
-app.value('DBPassword', 'secret');
-app.factory('Database', function(DBUsername, DBPassword) { ... });
-</code></pre>
+<div><div class="CodeRay">
+  <div class="code"><pre>app.value(<span class="string"><span class="delimiter">'</span><span class="content">DBUsername</span><span class="delimiter">'</span></span>, <span class="string"><span class="delimiter">'</span><span class="content">root</span><span class="delimiter">'</span></span>);
+app.value(<span class="string"><span class="delimiter">'</span><span class="content">DBPassword</span><span class="delimiter">'</span></span>, <span class="string"><span class="delimiter">'</span><span class="content">secret</span><span class="delimiter">'</span></span>);
+app.factory(<span class="string"><span class="delimiter">'</span><span class="content">Database</span><span class="delimiter">'</span></span>, <span class="keyword">function</span>(DBUsername, DBPassword) { ... });
+</pre></div>
+</div>
+</div>
 
 <p>Diese Konvention ist sinnvoll, um sich zusätzliche Konfigurationsdateien zu sparen. Alternativ müsste nämlich eine Mapping-Datei erstellt werden, die Funktionsnamen mit entsprechenden Abhängigkeiten enthält.</p>
 
@@ -730,21 +929,24 @@ app.factory('Database', function(DBUsername, DBPassword) { ... });
 
 <p>Beispiel:</p>
 
-<pre><code class="language-javascript">app.provider('helloWorld', function() {
-  this.setName = function(name) { this.name = name; };
+<div><div class="CodeRay">
+  <div class="code"><pre>app.provider(<span class="string"><span class="delimiter">'</span><span class="content">helloWorld</span><span class="delimiter">'</span></span>, <span class="keyword">function</span>() {
+  <span class="local-variable">this</span>.<span class="function">setName</span> = <span class="keyword">function</span>(name) { <span class="local-variable">this</span>.name = name; };
 
-  this.$get = function() {
-    var self = this;
-    return {
-      sayHello: function() { return "Hello, " + self.name + "!"; }
+  <span class="local-variable">this</span>.<span class="predefined">$get</span> = <span class="keyword">function</span>() {
+    <span class="keyword">var</span> self = <span class="local-variable">this</span>;
+    <span class="keyword">return</span> {
+      <span class="function">sayHello</span>: <span class="keyword">function</span>() { <span class="keyword">return</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">Hello, </span><span class="delimiter">&quot;</span></span> + self.name + <span class="string"><span class="delimiter">&quot;</span><span class="content">!</span><span class="delimiter">&quot;</span></span>; }
     }
   };
 });
 
-app.config(function(helloWorldProvider){
-  helloWorldProvider.setName('World');
+app.config(<span class="keyword">function</span>(helloWorldProvider){
+  helloWorldProvider.setName(<span class="string"><span class="delimiter">'</span><span class="content">World</span><span class="delimiter">'</span></span>);
 });
-</code></pre>
+</pre></div>
+</div>
+</div>
 
 <h3 id="factory">Factory</h3>
 
@@ -754,17 +956,23 @@ app.config(function(helloWorldProvider){
 
 <p>Eine Factory nutzt <a href="#provider">Provider</a> als Ausgangsbasis und bietet ein vereinfachtes Interface an. Wenn wir uns einen Ausschnitt aus dem Quellcode anschauen, sehen wir, dass Factory nichts anderes macht, als die Funktion, die wir als Parameter übergeben, an die  <code>$get</code>-Methode von Provider zu delegieren.</p>
 
-<pre><code class="language-javascript">function factory(name, factoryFn) { return provider(name, { $get: factoryFn }); }
-</code></pre>
+<div><div class="CodeRay">
+  <div class="code"><pre><span class="keyword">function</span> <span class="function">factory</span>(name, factoryFn) { <span class="keyword">return</span> provider(name, { <span class="predefined">$get</span>: factoryFn }); }
+</pre></div>
+</div>
+</div>
 
 <p>Beispiel:</p>
 
-<pre><code class="language-javascript">app.factory('helloWorldFromFactory', function() {
-  return {
-    sayHello: function() { return "Hello, World!"; }
+<div><div class="CodeRay">
+  <div class="code"><pre>app.factory(<span class="string"><span class="delimiter">'</span><span class="content">helloWorldFromFactory</span><span class="delimiter">'</span></span>, <span class="keyword">function</span>() {
+  <span class="keyword">return</span> {
+    <span class="function">sayHello</span>: <span class="keyword">function</span>() { <span class="keyword">return</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">Hello, World!</span><span class="delimiter">&quot;</span></span>; }
   };
 });
-</code></pre>
+</pre></div>
+</div>
+</div>
 
 <h3 id="service">Service</h3>
 
@@ -772,10 +980,13 @@ app.config(function(helloWorldProvider){
 
 <p>Beispiel:</p>
 
-<pre><code class="language-javascript">app.service('helloWorldFromService', function() {
-  this.sayHello = function() { return "Hello, World!"; };
+<div><div class="CodeRay">
+  <div class="code"><pre>app.service(<span class="string"><span class="delimiter">'</span><span class="content">helloWorldFromService</span><span class="delimiter">'</span></span>, <span class="keyword">function</span>() {
+  <span class="local-variable">this</span>.<span class="function">sayHello</span> = <span class="keyword">function</span>() { <span class="keyword">return</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">Hello, World!</span><span class="delimiter">&quot;</span></span>; };
 });
-</code></pre>
+</pre></div>
+</div>
+</div>
 
 <h3 id="value">Value</h3>
 
@@ -785,13 +996,19 @@ app.config(function(helloWorldProvider){
 
 <p>Ein Value ist eine weitere Vereinfachung einer <a href="#factory">Factory</a>. Einem Value kann man direkt einen String, Integer, Boolean übergeben, ohne sich die Mühe zu machen, einen Funktion mit einem Rückgabewert zu übergeben. In diesem Fall ist es aber nicht möglich, andere Services zu injizieren. Der Quellcode sieht ungefähr folgendermaßen aus:</p>
 
-<pre><code class="language-javascript">function value(name, value) { return factory(name, function() {return value;}); }
-</code></pre>
+<div><div class="CodeRay">
+  <div class="code"><pre><span class="keyword">function</span> <span class="function">value</span>(name, value) { <span class="keyword">return</span> factory(name, <span class="keyword">function</span>() {<span class="keyword">return</span> value;}); }
+</pre></div>
+</div>
+</div>
 
 <p>Beispiel:</p>
 
-<pre><code class="language-javascript">app.value('helloWorldFromService', "Hello World!");
-</code></pre>
+<div><div class="CodeRay">
+  <div class="code"><pre>app.value(<span class="string"><span class="delimiter">'</span><span class="content">helloWorldFromService</span><span class="delimiter">'</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">Hello World!</span><span class="delimiter">&quot;</span></span>);
+</pre></div>
+</div>
+</div>
 
 <h3 id="constant">Constant</h3>
 
@@ -808,8 +1025,11 @@ app.config(function(helloWorldProvider){
 
 <p>Beispiel:</p>
 
-<pre><code class="language-javascript">app.constant('pi', 3.14159265359);
-</code></pre>
+<div><div class="CodeRay">
+  <div class="code"><pre>app.constant(<span class="string"><span class="delimiter">'</span><span class="content">pi</span><span class="delimiter">'</span></span>, <span class="float">3.14159265359</span>);
+</pre></div>
+</div>
+</div>
 
 <h2 id="decorator">Decorator</h2>
 
@@ -829,18 +1049,49 @@ app.config(function(helloWorldProvider){
 
 <p>In unserem Beispiel definieren wir ein einfaches Value mit dem Wert <em>AngularJS</em>. Über Decorator erweitern wir die Zeichenkette zwei Mal. Wie wir sehen, können Decorator mehrfach angewendet werden. Wir erhalten als Endergebnis <em>AngularJS macht Webentwicklung einfach und elegant!</em>. Die Decorator können natürlich auch in separaten <em>config</em>-Methoden stehen.</p>
 
-<pre><code class="language-html">file: decorator/index.html
-</code></pre>
+<div><div class="CodeRay">
+  <div class="code"><pre><span class="tag">&lt;html</span> <span class="attribute-name">ng-app</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">DecoratorBeispiel</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+  <span class="tag">&lt;head&gt;</span>
+    <span class="tag">&lt;script</span> <span class="attribute-name">src</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">https://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="tag">&lt;/script&gt;</span>
+    <span class="tag">&lt;script</span> <span class="attribute-name">src</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">application.js</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="tag">&lt;/script&gt;</span>
+  <span class="tag">&lt;/head&gt;</span>
+  <span class="tag">&lt;body</span> <span class="attribute-name">ng-controller</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">MainController</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+    <span class="tag">&lt;h2&gt;</span>{{angularjs}}!<span class="tag">&lt;/h2&gt;</span>
+  <span class="tag">&lt;/body&gt;</span>
+<span class="tag">&lt;/html&gt;</span></pre></div>
+</div>
+</div>
 
-<pre><code class="language-javascript">file: decorator/application.js
-</code></pre>
+<div><div class="CodeRay">
+  <div class="code"><pre>app = angular.module(<span class="string"><span class="delimiter">&quot;</span><span class="content">DecoratorBeispiel</span><span class="delimiter">&quot;</span></span>, []);
+
+app.value(<span class="string"><span class="delimiter">'</span><span class="content">angularjs</span><span class="delimiter">'</span></span>, <span class="string"><span class="delimiter">'</span><span class="content">AngularJS</span><span class="delimiter">'</span></span>);
+
+app.controller(<span class="string"><span class="delimiter">'</span><span class="content">MainController</span><span class="delimiter">'</span></span>, <span class="keyword">function</span>(<span class="predefined">$scope</span>, angularjs) {
+  <span class="predefined">$scope</span>.angularjs = angularjs;
+});
+
+app.config(<span class="keyword">function</span>(<span class="predefined">$provide</span>) {
+  <span class="predefined">$provide</span>.decorator(<span class="string"><span class="delimiter">'</span><span class="content">angularjs</span><span class="delimiter">'</span></span>, <span class="keyword">function</span>(<span class="predefined">$delegate</span>) {
+    <span class="keyword">return</span> <span class="predefined">$delegate</span> + <span class="string"><span class="delimiter">'</span><span class="content"> macht Webentwicklung einfach</span><span class="delimiter">'</span></span>;
+  });
+  <span class="predefined">$provide</span>.decorator(<span class="string"><span class="delimiter">'</span><span class="content">angularjs</span><span class="delimiter">'</span></span>, <span class="keyword">function</span>(<span class="predefined">$delegate</span>) {
+    <span class="keyword">return</span> <span class="predefined">$delegate</span> + <span class="string"><span class="delimiter">'</span><span class="content"> und elegant</span><span class="delimiter">'</span></span>;
+  });
+});
+</pre></div>
+</div>
+</div>
 
 <h2 id="unobtrusive-javascript">Unobtrusive JavaScript</h2>
 
 <p>Seit Jahren wird Unobtrusive JavaScript als Heilmittel für komplizierte Applikationen propagiert. Die Idee, Logik aus dem Template zu entfernen, ist gut und richtig. Da die Ereignis-Handler in AngularJS wieder stark an alte Zeiten erinnern, möchten wir auf dieses Thema hier kurz eingehen. Nehmen wir als Beispiel <code>ng-click</code>:</p>
 
-<pre><code class="language-html">&lt;button ng-click="createTask()"&gt;Aufgabe erstellen&lt;/button&gt;
-</code></pre>
+<div><div class="CodeRay">
+  <div class="code"><pre><span class="tag">&lt;button</span> <span class="attribute-name">ng-click</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">createTask()</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>Aufgabe erstellen<span class="tag">&lt;/button&gt;</span>
+</pre></div>
+</div>
+</div>
 
 <p>Im ersten Moment sieht die letzte Zeile wie das <code>onclick</code>-Ereignis von mit einem anderen Namen aus. Machen wir also wieder einen Rückschritt?</p>
 
@@ -858,23 +1109,32 @@ app.config(function(helloWorldProvider){
 
 <p>Bei der Verwendung von AngularJS und Minifiern gibt es einen Fallstrick. Der Injektor von AngularJS erzeugt neue Objekte anhand der Namen, die einer Funktion übergeben werden. Nehmen wir als Beispiel einen Controller, der folgendermaßen aussieht:</p>
 
-<pre><code class="language-javascript">function MeinController($scope, MeinService) { ... }
-</code></pre>
+<div><div class="CodeRay">
+  <div class="code"><pre><span class="keyword">function</span> <span class="function">MeinController</span>(<span class="predefined">$scope</span>, MeinService) { ... }
+</pre></div>
+</div>
+</div>
 
 <p>Nach der Minification:</p>
 
-<pre><code class="language-javascript">function MeinController(a, b) { ... }
-</code></pre>
+<div><div class="CodeRay">
+  <div class="code"><pre><span class="keyword">function</span> <span class="function">MeinController</span>(a, b) { ... }
+</pre></div>
+</div>
+</div>
 
 <h3 id="steuerung-ber-inject">Steuerung über $inject</h3>
 
 <p>Hier wird das Problem offensichtlich. Da nun <code>a</code> und <code>b</code> Funktionswerte übergeben werden, versucht der Injektor Instanzen von <code>a</code> und <code>b</code> statt von <code>$scope</code> und <code>MeinService</code> zu erzeugen. Um dieses Problem zu umgehen, müssen wir den Injektor in diesen Fällen direkt steuern. Die direkte Steuerung des Injektors erfolgt über  ein Arrays von Strings:</p>
 
-<pre><code class="language-javascript">var MeinController = function(a, b) {
+<div><div class="CodeRay">
+  <div class="code"><pre><span class="keyword">var</span> <span class="function">MeinController</span> = <span class="keyword">function</span>(a, b) {
   ...
 }
-MeinController.$inject = ['$scope', 'MeinService'];
-</code></pre>
+MeinController.<span class="predefined">$inject</span> = [<span class="string"><span class="delimiter">'</span><span class="content">$scope</span><span class="delimiter">'</span></span>, <span class="string"><span class="delimiter">'</span><span class="content">MeinService</span><span class="delimiter">'</span></span>];
+</pre></div>
+</div>
+</div>
 
 <p>Wie man sieht, haben wir den Erzeugung der Funktion leicht verändern müssen und eine temporäre Variable eingefügt. Außerdem müssen wir bei der Veränderung des Funktionsaufrufs unbedingt die Steuerung des Injektors nachziehen. Für Controller benutzen wir diese Art der Steuerung.</p>
 
@@ -882,22 +1142,31 @@ MeinController.$inject = ['$scope', 'MeinService'];
 
 <p>Wenn wir Funktionen übergeben, die den Injektor benutzen, wird die Art der Steuerung, wie wir sie gerade kennengelernt haben, unbequem. Aus</p>
 
-<pre><code class="language-javascript">app.factory('todo', function($http) { ... });
-</code></pre>
+<div><div class="CodeRay">
+  <div class="code"><pre>app.factory(<span class="string"><span class="delimiter">'</span><span class="content">todo</span><span class="delimiter">'</span></span>, <span class="keyword">function</span>(<span class="predefined">$http</span>) { ... });
+</pre></div>
+</div>
+</div>
 
 <p>wird</p>
 
-<pre><code class="language-javascript">var todoFactory = function(z) { ... };
-todoFactory.$inject = ['$http'];
-app.factory('todo', todoFactory);
-</code></pre>
+<div><div class="CodeRay">
+  <div class="code"><pre><span class="keyword">var</span> <span class="function">todoFactory</span> = <span class="keyword">function</span>(z) { ... };
+todoFactory.<span class="predefined">$inject</span> = [<span class="string"><span class="delimiter">'</span><span class="content">$http</span><span class="delimiter">'</span></span>];
+app.factory(<span class="string"><span class="delimiter">'</span><span class="content">todo</span><span class="delimiter">'</span></span>, todoFactory);
+</pre></div>
+</div>
+</div>
 
 <p>Für diesen Fall gibt es noch eine zweite Schreibweise - die inline-Annotation.</p>
 
-<pre><code class="language-javascript">app.factory('todo', ['$http', function($http) {
+<div><div class="CodeRay">
+  <div class="code"><pre>app.factory(<span class="string"><span class="delimiter">'</span><span class="content">todo</span><span class="delimiter">'</span></span>, [<span class="string"><span class="delimiter">'</span><span class="content">$http</span><span class="delimiter">'</span></span>, <span class="keyword">function</span>(<span class="predefined">$http</span>) {
   ...
 }]);
-</code></pre>
+</pre></div>
+</div>
+</div>
 
 <h3 id="alternative">Alternative</h3>
 
@@ -974,13 +1243,16 @@ app.factory('todo', todoFactory);
 
 <p>ACHTUNG: JSON3 muss vor AngularJS geladen werden.</p>
 
-<pre><code class="language-html">&lt;head&gt;
-  &lt;!--[if lte IE 8]&gt;
-    &lt;script src="/javascripts/json3.min.js"&gt;&lt;/script&gt;
-  &lt;![endif]--&gt;
-  &lt;script src="/javascripts/angular.min.js"&gt;&lt;/script&gt;
-&lt;/head&gt;
-</code></pre>
+<div><div class="CodeRay">
+  <div class="code"><pre><span class="tag">&lt;head&gt;</span>
+  <span class="comment">&lt;!--[if lte IE 8]&gt;
+    &lt;script src=&quot;/javascripts/json3.min.js&quot;&gt;&lt;/script&gt;
+  &lt;![endif]--&gt;</span>
+  <span class="tag">&lt;script</span> <span class="attribute-name">src</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">/javascripts/angular.min.js</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="tag">&lt;/script&gt;</span>
+<span class="tag">&lt;/head&gt;</span>
+</pre></div>
+</div>
+</div>
 
 <h3 id="html-elemente-ie6-8">HTML-Elemente (IE6-8)</h3>
 
@@ -988,16 +1260,19 @@ app.factory('todo', todoFactory);
 
 <p>Jedes einzelne Element, was später verwendet werden soll, muss im Head-Bereich definiert werden. Dabei sind sowohl die Elemente gemeint, die von AngularJS mitgeliefert werden als auch Elemente, die durch eigene Direktiven enstehen. Erzeugst du z.B. eine neue Direktive, die als Element <code>&lt;tabs&gt;</code> benutzt, musst du im Head <code>document.createElement('tabs')</code> schreiben.</p>
 
-<pre><code class="language-html">&lt;head&gt;
-&lt;!--[if lte IE 8]&gt;
+<div><div class="CodeRay">
+  <div class="code"><pre><span class="tag">&lt;head&gt;</span>
+<span class="comment">&lt;!--[if lte IE 8]&gt;
   &lt;script&gt;
     document.createElement('ng-include');
     document.createElement('ng-view');
     document.createElement('mein-tag');
   &lt;/script&gt;
-&lt;![endif]--&gt;
-&lt;/head&gt;
-</code></pre>
+&lt;![endif]--&gt;</span>
+<span class="tag">&lt;/head&gt;</span>
+</pre></div>
+</div>
+</div>
 
 <p>Erweiterungen in Form von Attributen <code>&lt;li ng-repeat="..."&gt;&lt;/li&gt;</code> werden gleich erkannt und müssen nicht gesondert behandelt werden.</p>
 
@@ -1024,8 +1299,11 @@ app.factory('todo', todoFactory);
 
 <p>Asynchrone Funktionsaufrufe hat man klassisch in Form von Callbacks vorliegen. Als Beispiel nehmen wir einen Funktionsaufruf per AJAX in jQuery:</p>
 
-<pre><code class="language-javascript">$.get('/tasks', { success: onSuccess, failure: onFailure, always: onAlways });
-</code></pre>
+<div><div class="CodeRay">
+  <div class="code"><pre><span class="predefined">$</span>.get(<span class="string"><span class="delimiter">'</span><span class="content">/tasks</span><span class="delimiter">'</span></span>, { <span class="key">success</span>: onSuccess, <span class="key">failure</span>: onFailure, <span class="key">always</span>: onAlways });
+</pre></div>
+</div>
+</div>
 
 <p>Wo liegt der Nachteil an dieser Art der asynchronen Kommunikation?</p>
 
@@ -1035,14 +1313,17 @@ app.factory('todo', todoFactory);
   <li>Das Zusammenspiel mit mehreren Callbacks gestaltet sich schwierig. Eine Verschachtelung erzeugt eine <em>Pyramid of Doom</em> (siehe Beispiel). Ein gleichzeichtigtes Abschicken von mehreren Callbacks, bei denen das Ergebnis zusammengefügt wird, erfordert im Verhältnis enormen Aufwand.</li>
 </ul>
 
-<pre><code class="language-javascript">// Pyramid of Doom
-aufruf1(function(ergebnis1) {
-  aufruf2(function(ergebnis2) {
-    aufruf3(function(ergebnis3) { // ...
+<div><div class="CodeRay">
+  <div class="code"><pre><span class="comment">// Pyramid of Doom</span>
+aufruf1(<span class="keyword">function</span>(ergebnis1) {
+  aufruf2(<span class="keyword">function</span>(ergebnis2) {
+    aufruf3(<span class="keyword">function</span>(ergebnis3) { <span class="comment">// ...</span>
     });
   });
 });
-</code></pre>
+</pre></div>
+</div>
+</div>
 
 <p>Natürlich könnte man alles über Trigger steuern. Das heißt für jeden Callback im Erfolgs- und Fehlerfall müsste man einen Trigger schreiben und eine sinnvolle Benamung dafür suchen. Promises sind dagegen eine Methode für die Bequemlichkeit. Sie können verkettet statt geschachtelt werden und das Ergebnis mehrerer Promises kann sehr einfach zusammengefügt werden.</p>
 
@@ -1064,31 +1345,91 @@ aufruf1(function(ergebnis1) {
 
 <p>Nehmen wir als Beispiel ein kleines Würfelspiel. Wer eine 6 würfelt, gewinnt. Gewürfelt wir mit zwei Sekunden Verzögerung.</p>
 
-<pre><code class="language-javascript">var wuerfel = $q.defer();
-setTimeout(function() {
+<div><div class="CodeRay">
+  <div class="code"><pre><span class="keyword">var</span> wuerfel = <span class="predefined">$q</span>.defer();
+setTimeout(<span class="keyword">function</span>() {
   ergebnis = Random...
-  if (ergebnis == 6) {
+  <span class="keyword">if</span> (ergebnis == <span class="integer">6</span>) {
     wuerfel.resolve(ergebnis);
-  } else {
+  } <span class="keyword">else</span> {
     wuerfel.reject(ergebnis);
   }
-}, 2000);
+}, <span class="integer">2000</span>);
 promise = wuerfel.promise
 
-promise.then(function(zahl) {
-  alert('Erfolg: Du hast eine ' + zahl + ' gewürfelt!');
-}, function(zahl) {
-  alert('Fehler: Eine ' + zahl + ' reicht leider nicht');
+promise.then(<span class="keyword">function</span>(zahl) {
+  alert(<span class="string"><span class="delimiter">'</span><span class="content">Erfolg: Du hast eine </span><span class="delimiter">'</span></span> + zahl + <span class="string"><span class="delimiter">'</span><span class="content"> gewürfelt!</span><span class="delimiter">'</span></span>);
+}, <span class="keyword">function</span>(zahl) {
+  alert(<span class="string"><span class="delimiter">'</span><span class="content">Fehler: Eine </span><span class="delimiter">'</span></span> + zahl + <span class="string"><span class="delimiter">'</span><span class="content"> reicht leider nicht</span><span class="delimiter">'</span></span>);
 });
-</code></pre>
+</pre></div>
+</div>
+</div>
 
 <p><a href="http://angularjs.de/code/promises/index.html">Beispiel öffnen</a></p>
 
-<pre><code class="language-html">file: promises/index.html
-</code></pre>
+<div><div class="CodeRay">
+  <div class="code"><pre><span class="tag">&lt;html</span> <span class="attribute-name">ng-app</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;head&gt;</span>
+    <span class="tag">&lt;script</span> <span class="attribute-name">src</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">https://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="tag">&lt;/script&gt;</span>
+    <span class="tag">&lt;script</span> <span class="attribute-name">src</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">application.js</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="tag">&lt;/script&gt;</span>
+  <span class="tag">&lt;/head&gt;</span>
+  <span class="tag">&lt;body</span> <span class="attribute-name">ng-controller</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">MainController</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+    <span class="tag">&lt;fieldset&gt;</span>
+      <span class="tag">&lt;legend&gt;</span>Promise 1<span class="tag">&lt;/legend&gt;</span>
+      <span class="tag">&lt;button</span> <span class="attribute-name">ng-click</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">resolve1()</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>Resolve<span class="tag">&lt;/button&gt;</span>
+      <span class="tag">&lt;button</span> <span class="attribute-name">ng-click</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">reject1()</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>Reject<span class="tag">&lt;/button&gt;</span>
+      {{result1}}
+    <span class="tag">&lt;/fieldset&gt;</span>
+    <span class="tag">&lt;fieldset&gt;</span>
+      <span class="tag">&lt;legend&gt;</span>Promise 2<span class="tag">&lt;/legend&gt;</span>
+      <span class="tag">&lt;button</span> <span class="attribute-name">ng-click</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">resolve2()</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>Resolve<span class="tag">&lt;/button&gt;</span>
+      <span class="tag">&lt;button</span> <span class="attribute-name">ng-click</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">reject2()</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>Reject<span class="tag">&lt;/button&gt;</span>
+      {{result2}}
+    <span class="tag">&lt;/fieldset&gt;</span>
+    <span class="tag">&lt;fieldset&gt;</span>
+      <span class="tag">&lt;legend&gt;</span>Promise All<span class="tag">&lt;/legend&gt;</span>
+      {{resultAll}}
+    <span class="tag">&lt;/fieldset&gt;</span>
+  <span class="tag">&lt;/body&gt;</span>
+<span class="tag">&lt;/html&gt;</span></pre></div>
+</div>
+</div>
 
-<pre><code class="language-javascript">file: promises/application.js
-</code></pre>
+<div><div class="CodeRay">
+  <div class="code"><pre><span class="keyword">function</span> <span class="function">MainController</span>(<span class="predefined">$scope</span>, <span class="predefined">$q</span>) {
+  <span class="keyword">var</span> defer1 = <span class="predefined">$q</span>.defer();
+  <span class="keyword">var</span> defer2 = <span class="predefined">$q</span>.defer();
+
+  <span class="keyword">var</span> promise1 = defer1.promise;
+  <span class="keyword">var</span> promise2 = defer2.promise;
+
+  promise1.then(<span class="keyword">function</span>(message) {
+    <span class="predefined">$scope</span>.result1 = <span class="string"><span class="delimiter">'</span><span class="content">Resolved with </span><span class="delimiter">'</span></span> + message;
+  }, <span class="keyword">function</span>(reason){
+    <span class="predefined">$scope</span>.result1 = <span class="string"><span class="delimiter">'</span><span class="content">Rejected with </span><span class="delimiter">'</span></span> + reason;
+  });
+
+  promise2.then(<span class="keyword">function</span>(message) {
+    <span class="predefined">$scope</span>.result2 = <span class="string"><span class="delimiter">'</span><span class="content">Resolved with </span><span class="delimiter">'</span></span> + message;
+  }, <span class="keyword">function</span>(reason){
+    <span class="predefined">$scope</span>.result2 = <span class="string"><span class="delimiter">'</span><span class="content">Rejected with </span><span class="delimiter">'</span></span> + reason;
+  });
+
+  <span class="predefined">$q</span>.all([promise1,promise2]).then(<span class="keyword">function</span>(messages) {
+    <span class="predefined">$scope</span>.resultAll = <span class="string"><span class="delimiter">'</span><span class="content">Resolved with </span><span class="delimiter">'</span></span> + messages;
+  }, <span class="keyword">function</span>(reason){
+    <span class="predefined">$scope</span>.resultAll = <span class="string"><span class="delimiter">'</span><span class="content">Rejected with </span><span class="delimiter">'</span></span> + reason;
+  });
+
+  <span class="predefined">$scope</span>.<span class="function">resolve1</span> = <span class="keyword">function</span>() { defer1.resolve(<span class="string"><span class="delimiter">&quot;</span><span class="content">Success1</span><span class="delimiter">&quot;</span></span>); }
+  <span class="predefined">$scope</span>.<span class="function">reject1</span>  = <span class="keyword">function</span>() { defer1.reject(<span class="string"><span class="delimiter">&quot;</span><span class="content">Error1</span><span class="delimiter">&quot;</span></span>);  }
+  <span class="predefined">$scope</span>.<span class="function">resolve2</span> = <span class="keyword">function</span>() { defer2.resolve(<span class="string"><span class="delimiter">&quot;</span><span class="content">Success2</span><span class="delimiter">&quot;</span></span>); }
+  <span class="predefined">$scope</span>.<span class="function">reject2</span>  = <span class="keyword">function</span>() { defer2.reject(<span class="string"><span class="delimiter">&quot;</span><span class="content">Error2</span><span class="delimiter">&quot;</span></span>);  }
+
+}</pre></div>
+</div>
+</div>
 
 <h2 id="internationalisierung">Internationalisierung (I18n und L10n) [TODO]</h2>
 
@@ -1114,24 +1455,30 @@ promise.then(function(zahl) {
 
 <p>Die meisten Frameworks setzen dabei auf das Entwurfsmuster des <a href="http://de.wikipedia.org/wiki/Beobachter_(Entwurfsmuster)">Beobachters</a> (auch Observer oder publish-subscribe). Dazu werden die normalen Datentypen von JavaScript um weitere Methoden erweitert, um Veränderungen abfangen zu können.</p>
 
-<pre><code class="language-javascript">App.TodosController = Ember.ArrayController.extend({
-  addTask = function() {
-    this.pushObject(Ember.Object.create({name: this.get(newTaskName), done: false}));
-    this.set('newTaskName', '');
+<div><div class="CodeRay">
+  <div class="code"><pre>App.TodosController = Ember.ArrayController.extend({
+  <span class="function">addTask</span> = <span class="keyword">function</span>() {
+    <span class="local-variable">this</span>.pushObject(Ember.Object.create({<span class="key">name</span>: <span class="local-variable">this</span>.get(newTaskName), <span class="key">done</span>: <span class="predefined-constant">false</span>}));
+    <span class="local-variable">this</span>.set(<span class="string"><span class="delimiter">'</span><span class="content">newTaskName</span><span class="delimiter">'</span></span>, <span class="string"><span class="delimiter">'</span><span class="delimiter">'</span></span>);
   }
 });
-</code></pre>
+</pre></div>
+</div>
+</div>
 
 <p>Angular.js mit Dirty-Checking</p>
 
-<pre><code class="language-javascript">function TodosController($scope) {
-  $scope.todos = [];
-  $scope.addTodo = function() {
-    $scope.todos.push({name: $scope.newTodoName, done: false});
-    $scope.newTodoName = '';
+<div><div class="CodeRay">
+  <div class="code"><pre><span class="keyword">function</span> <span class="function">TodosController</span>(<span class="predefined">$scope</span>) {
+  <span class="predefined">$scope</span>.todos = [];
+  <span class="predefined">$scope</span>.<span class="function">addTodo</span> = <span class="keyword">function</span>() {
+    <span class="predefined">$scope</span>.todos.push({<span class="key">name</span>: <span class="predefined">$scope</span>.newTodoName, <span class="key">done</span>: <span class="predefined-constant">false</span>});
+    <span class="predefined">$scope</span>.newTodoName = <span class="string"><span class="delimiter">'</span><span class="delimiter">'</span></span>;
   }
 }
-</code></pre>
+</pre></div>
+</div>
+</div>
 
 <p>Die Zukunft:</p>
 
